@@ -1,0 +1,21 @@
+{
+  "slug": "your-creative-repository-name",
+  "article": [
+    "none",
+    "plain",
+    "acs"
+  ],
+  "cover": [
+    "none",
+    "plain",
+    "ugent"
+  ],
+  "env": [
+    "pip",
+    "micromamba"
+  ],
+  "_copy_without_render": [
+    "*.tex",
+    "*.cls"
+  ]
+}

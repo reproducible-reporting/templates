@@ -1,0 +1,75 @@
+\documentclass[faculty=we,rightcolwidth=.38,signature,pagenumbers]{ugent-letter}
+
+% Make PDFLaTeX builds reproducible
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\pdfinfo{/Producer()/Creator()}
+
+% Settings for the letter head
+\mydept{Department of Physics and Astronomy\\Center for Molecular Modeling}
+\myname{Prof. Dr. ir. Toon Verstraelen}
+\myposition{Associate Professor}
+\myemail{toon.verstraelen@ugent.be}
+\myphone{+32 9 264 65 56}
+\myaddress{Tech Lane Ghent Science\\Park Campus A\\Technologiepark 46\\B-9052 Zwijnaarde\\Belgium}
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{allcolors=ugentblue,colorlinks=true,linktoc=none}
+
+% Nicer bullet lists
+\usepackage{enumitem}
+
+\begin{document}
+
+% The settings below most likely change for every letter
+% only \mydate is mandatory, \myref and \mysubject can be omitted
+%\myref{XYZ--123}
+\mydate{\today}
+\mysubject{}
+
+% Start of the actual letter
+\begin{letter}{
+Editors of the Journal XYZ
+}
+
+% Opening the letter, this macro also typsets the 'from', 'to',
+% 'subject', 'Ref' and 'Date' information
+\opening{Dear Editor,}
+
+We have the pleasure to submit the manuscript entitled
+\textbf{TITLE}
+by \textbf{AUTHORS} as an \textbf{PUBLICATION TYPE} to the Journal XYZ.
+
+Paragraph on suitability for the Journal.
+
+Paragraph on impact on the field.
+
+We include all the necessary input files, and detailed results as part of the supplementary information.
+
+The manuscript is original and has not been submitted elsewhere.
+We intend to upload a preprint of the accepted article on arXiv and the UGent repository (\url{https://biblio.ugent.be/}) in accordance with our legal and funding obligations.
+All authors have read and approved the manuscript for publication and declare no conflict of interest.
+
+We suggest the following reviewers with the appropriate expertise:
+%
+\begin{itemize}[itemsep=12pt]
+    \item
+    \begin{minipage}[t]{\linewidth}
+    \textbf{Reviewer Name}: \href{mailto:name@e.mail}{name@e.mail} \\
+    Professor \\
+    Institute \\
+    Address \\
+    (multiple lines) \\
+    Country \\
+    Phone \\
+    \textbf{Reason:} Motivate reviewer choice
+    \end{minipage}
+\end{itemize}
+
+\closing{Sincerely,}
+(on behalf of all authors)
+
+\end{letter}
+\end{document}

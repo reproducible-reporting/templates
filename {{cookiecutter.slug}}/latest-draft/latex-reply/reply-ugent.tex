@@ -1,0 +1,90 @@
+\documentclass[rightcolwidth=.38]{ugent-note}
+
+% Make PDFLaTeX builds reproducible
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\pdfinfo{/Producer()/Creator()}
+
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{changepage}
+\usepackage{hyperref}
+\hypersetup{allcolors=ugentblue,colorlinks=true,linktoc=none}
+
+
+% Central place to control how the replies should be formatted
+\newenvironment{reply}{%
+    \begin{adjustwidth}{1cm}{}
+    \color{ugentblue}%
+}{%
+    \end{adjustwidth}
+}
+
+\begin{document}
+
+\section*{Detailed replies to reviewer comments}
+
+\subsection*{Editorial Review:}
+
+\begin{enumerate}
+    \item
+    Comment from the editor.
+    \begin{reply}
+        Our response.
+    \end{reply}
+
+    \item
+    Comment from the editor.
+    \begin{reply}
+        Our response.
+    \end{reply}
+\end{enumerate}
+
+
+\subsection*{Reviewer: 1}
+
+General comments from reviewer 1.
+
+\begin{reply}
+    We are grateful for the positive words and constructive criticism, as they helped us to improve the manuscript significantly.
+\end{reply}
+
+Some more general comments from Reviewer 1 to introduce the specific comments.
+
+\begin{enumerate}[parsep=0.5em]
+    \item First specific comment.
+    \begin{reply}
+        Our reply to the first specific comment
+    \end{reply}
+
+    \item Second specific comment.
+    \begin{reply}
+        Our reply to the second specific comment
+    \end{reply}
+\end{enumerate}
+
+\subsection*{Reviewer: 2}
+
+General comments from reviewer 2.
+
+\begin{reply}
+    We appreciate your positive words and have incoporated your suggestions in the revised manuscript.
+\end{reply}
+
+Some more general comments from Reviewer 2 to introduce the specific comments.
+
+\begin{enumerate}[parsep=0.5em]
+    \item First specific comment.
+    \begin{reply}
+        Our reply to the first specific comment
+    \end{reply}
+
+    \item Second specific comment.
+    \begin{reply}
+        Our reply to the second specific comment
+    \end{reply}
+\end{enumerate}
+
+
+\end{document}

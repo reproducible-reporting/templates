@@ -1,0 +1,58 @@
+% Preamble
+\documentclass[11pt]{article}
+
+% Make PDFLaTeX builds reproducible
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\pdfinfo{/Producer()/Creator()}
+
+% Packages
+\usepackage{chemformula} % Formula subscripts using \ch{}
+\usepackage[T1]{fontenc} % Use modern font encodings
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{upgreek}
+\usepackage{threeparttable}
+\usepackage{algorithm}
+\usepackage{algpseudocodex}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{lineno}
+\usepackage{adjustbox}
+
+% Configuration
+\renewcommand\thetable{S\arabic{table}}
+\renewcommand\thefigure{S\arabic{figure}}
+\renewcommand\thesection{S\arabic{section}}
+\renewcommand\theequation{S\arabic{equation}}
+
+% Metadata
+\title{Supplementary information for ``TITLE''}
+\author{%
+    AUTHOR$^{1*, \text{ORCID:0000-0000-0000-0000}}$\\
+}
+\date{%
+    $^1$ Center for Molecular Modeling, Ghent University, Ghent, Belgium\\
+    $^*$ Corresponding author: \url{foo@bar.com}\\\bigskip
+    \today
+}
+
+% Document
+\begin{document}
+
+\maketitle
+\pagenumbering{gobble}
+\tableofcontents
+\appendix
+
+\newpage
+\pagenumbering{arabic}
+
+\section{ToDo}
+\label{sec:todo}
+
+\end{document}

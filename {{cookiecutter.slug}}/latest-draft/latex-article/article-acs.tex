@@ -1,0 +1,168 @@
+% Preamble
+\documentclass[journal=jctcce,manuscript=article,layout=traditional,]{achemso}
+
+% Make PDFLaTeX builds reproducible
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\pdfinfo{/Producer()/Creator()}
+
+% Packages
+\usepackage{chemformula} % Formula subscripts using \ch{}
+\usepackage[T1]{fontenc} % Use modern font encodings
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{upgreek}
+\usepackage{threeparttable}
+\usepackage{algorithm}
+\usepackage{algpseudocodex}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{lineno}
+\usepackage{adjustbox}
+
+% Configuration
+\SectionNumbersOn
+
+% Custom Commands
+
+% Metadata
+\title{Great title}
+
+\author{ADD AUTHORS LATE}
+\affiliation[Ghent University]{Center for Molecular Modeling (CMM), Ghent University, Technologiepark-Zwijnaarde 46, B-9052, Ghent, Belgium}
+\alsoaffiliation{OPTIONAL}
+\email{foo@bar.com}
+
+\keywords{TODO}
+
+% Document
+\begin{document}
+
+    \begin{abstract}
+         The abstract comes here.
+    \end{abstract}
+
+    \begin{tocentry}
+        TOC Graphic
+    \end{tocentry}
+
+    \newpage
+    \linenumbers
+
+    \section{Introduction}
+    \label{sec:introduction}
+
+    Example citation.\cite{knuth:1984}
+
+    \begin{figure}
+        % Contrary to the popular recommendatios,
+        % I recommend to specify the extension.
+        \begin{center}
+            \includegraphics{smile.pdf}
+        \end{center}
+        \caption{Smile!}
+        \label{fig:smile}
+    \end{figure}
+
+    \begin{figure}
+        % Contrary to the popular recommendatios,
+        % I recommend to specify the extension.
+        \begin{center}
+            \includegraphics{plot-example.pdf}
+        \end{center}
+        \caption{
+            An example plot.
+            The default settings (in the RepRep article template)
+            are tuned for readable single-column figures.
+        }
+        \label{fig:plot-example}
+    \end{figure}
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ac tortor vitae purus faucibus ornare.
+    Mollis nunc sed id semper risus.
+    Vulputate dignissim suspendisse in est ante in nibh.
+    Tortor at auctor urna nunc id cursus metus aliquam.
+    Pellentesque diam volutpat commodo sed egestas egestas.
+    Convallis a cras semper auctor.
+    Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt.
+    Consequat interdum varius sit amet mattis vulputate enim.
+    Est ultricies integer quis auctor.
+    Sapien et ligula ullamcorper malesuada proin libero.
+    Ultrices dui sapien eget mi proin sed libero.
+    Vel turpis nunc eget lorem.
+    Feugiat nibh sed pulvinar proin gravida hendrerit lectus a.
+
+    Fringilla est ullamcorper eget nulla.
+    Sit amet est placerat in egestas erat imperdiet.
+    Ut morbi tincidunt augue interdum velit euismod.
+    Ut consequat semper viverra nam libero justo.
+    Sed tempus urna et pharetra pharetra massa.
+    Euismod in pellentesque massa placerat duis.
+    Interdum velit laoreet id donec ultrices tincidunt arcu non sodales.
+    Leo vel fringilla est ullamcorper.
+    Lacus vestibulum sed arcu non.
+    Dictum non consectetur a erat nam.
+    Risus at ultrices mi tempus imperdiet.
+
+    Vitae tortor condimentum lacinia quis vel eros donec ac odio.
+    Ullamcorper a lacus vestibulum sed arcu non.
+    Tincidunt lobortis feugiat vivamus at augue eget arcu.
+    Sit amet commodo nulla facilisi.
+    Eget velit aliquet sagittis id consectetur purus.
+    Cursus turpis massa tincidunt dui ut.
+    Aliquam sem et tortor consequat id.
+    Diam vulputate ut pharetra sit amet aliquam id diam maecenas.
+    Scelerisque fermentum dui faucibus in ornare quam.
+    A scelerisque purus semper eget duis at tellus.
+    Odio eu feugiat pretium nibh ipsum consequat nisl vel.
+    Porta lorem mollis aliquam ut porttitor leo a diam.
+    Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque.
+    Pharetra et ultrices neque ornare aenean euismod.
+    Purus viverra accumsan in nisl nisi scelerisque eu ultrices.
+    Eget est lorem ipsum dolor sit.
+    Id donec ultrices tincidunt arcu non sodales neque sodales ut.
+    Interdum velit laoreet id donec ultrices tincidunt.
+
+    \section{Methods}
+    \label{sec:methods}
+
+    % Always use the align environment for equations.
+    \begin{align}
+        f(x) &= \sin(x)
+    \end{align}
+
+    \section{Results}
+    \label{sec:results}
+
+    \section{Discussion}
+    \label{sec:discussion}
+
+    \section{Conclusions}
+    \label{sec:conclusions}
+
+    \section*{Author Contributions}
+    \label{sec:author-contributions}
+
+    XYZ did foo.
+
+    \begin{acknowledgement}
+    The authors thank the Flemish Supercomputing Centre (VSC),
+    funded by Ghent University,
+    FWO and the Flemish Government for use of their computational resources.
+
+    Add more.
+    \end{acknowledgement}
+
+    \begin{suppinfo}
+    % Anything that does not fit in the PDF goes into a dataset and must be uploaded to a data repository.
+    The Supplementary Information is a PDF document with \ldots
+    \end{suppinfo}
+
+    \bibliography{references}
+
+\end{document}

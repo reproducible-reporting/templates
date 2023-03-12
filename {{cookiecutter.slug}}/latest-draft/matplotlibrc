@@ -1,0 +1,8 @@
+backend: Agg
+font.size: 8.0
+figure.dpi: 600
+figure.figsize: 3.5, 3
+figure.constrained_layout.use: True
+axes.spines.top: False
+axes.spines.right: False
+savefig.dpi: 600
