@@ -12,3 +12,5 @@ but you have to link back to this repository.
 The usage of this template is documented in [`DOCUMENTATION.md`](DOCUMENTATION.md).
 
 See [Reproducible Reporting](https://github.com/reproducible-reporting) for an overview.
+
+If you would like to contribute, please read [CONTRIBUTING.md](https://github.com/reproducible-reporting/.github/blob/main/CONTRIBUTING.md).

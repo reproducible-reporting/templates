@@ -204,7 +204,7 @@ which are also copied when you use the Cookiecutter:
 
 Whenever you start a new terminal, you need to run `source env/bin/activate` to use `rr`.
 If this bothers you, do not put such things in your `~/.bashrc`.
-User [direnv](https://github.com/direnv/direnv) instead.
+Use [direnv](https://github.com/direnv/direnv) instead.
 
 
 ### Keep clean
