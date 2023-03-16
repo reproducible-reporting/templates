@@ -11,7 +11,7 @@ The following competences are required (at a basic level) for this template to b
 - Git
 - Python
 
-Without these competences, it is still possible to contribute to an article
+Without these competences, it is still possible to contribute to a publication
 that uses this template, but it will be difficult to take the lead.
 
 ### Required software and configuration
