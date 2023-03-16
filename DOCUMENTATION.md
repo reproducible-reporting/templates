@@ -27,17 +27,31 @@ ideally using your operating system's software installation tool
 - latexmk: https://personal.psu.edu/~jcc8/software/latexmk/
 - A Text editor compatible with [editorconfig](https://editorconfig.org/)
 
-Furthermore, it is assumed that you do not have a Pip or Conda environment
-active by default in `~/.bashrc` (or similar initialization script).
-When using Conda, make sure you have no `~/.condarc` or `~/.mambarc` file.
+A new dedicated
+[pip](https://pip.pypa.io/en/stable/) or [micromamba](https://mamba.readthedocs.io/)
+environment is created for each manuscript.
+The goal is to isolate this environment as much as possible from your operating system,
+to create a highly reproducible software environment.
+Perfect isolation is not possible yet at this stage.
+Some points of attention:
 
-A new dedicated environment is created for every manuscript,
-which may not play well with such "always active" environments.
-Such defaults thwart reproducibility,
-because others may not have the same global settings.
+- An always-active pip environment (activated in your shell profile)
+  may not work well when pip is used for the publication.
 
-Everything should work on Linux, macOS and WSL.
+- Similarly, an always-active conda environment (activated in your shell profile)
+  may not work well when micromamba is used for the publication.
+
+- Using pip for a publication, on top of your default conda can work well.
+  (Needs more testing.)
+
+- When using micromamba, make sure you do not have a `~/.condarc` or `~/.mambarc` file.
+  These contain global settings that may interfere with micromamba.
+
+All should work on Linux, macOS and WSL.
 It may also work natively on Windows (one day).
+
+The long-term plan is to execute everything inside an [Apptainer](https://apptainer.org/),
+which will contain the dependencies above and anything else that might be needed for the publication.
 
 
 ## Getting started
