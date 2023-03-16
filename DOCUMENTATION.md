@@ -163,12 +163,12 @@ However, there are a few interesting exceptions:
 - Data files with intermediate results, such as CSV tables,
   even when they are computationally cheap, should be committed to Git.
   This may not seem useful, because it should be easy to regenerate them,
-  but it is important enough.
-  This allows for the verification of reproducibility,
-  which is sometimes of interest,
+  but it still is important.
+  With these data files, reproducibility can be verified,
+  which is also of interest,
   e.g. when there are issues with the isolation of the software environment,
   or when trying to reproduce old work for which the software environment is
-  difficult to reproduce.
+  difficult to recreate.
 
 
 ## Template conventions
