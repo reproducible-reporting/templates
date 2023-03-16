@@ -3,7 +3,7 @@ set -e
 # This script assumes you have a running and somewhat modern Python environment.
 
 # Create the venv
-python -m venv env
+python3 -m venv env
 
 # Update activation scripts with extra variables.
 # The deactivation is not patched because that would be too tedious and fragile.
@@ -40,4 +40,4 @@ EOL
 fi
 
 # Install requirements, possibly updated after repository initialization
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
