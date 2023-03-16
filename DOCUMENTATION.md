@@ -271,15 +271,16 @@ Run `ninja -h` for more details or consult the [Ninja usage documentation](https
 There are two options:
 
 - You can either run `rr target-file`, where `target-file` is the file that needs to be rebuilt.
-  This will also rebuild dependencies if needed, and will do nothing if the target is already'
+  This will also rebuild dependencies if needed, and will do nothing if the target is already
   up to date.
 - You may also build parts manually.
   E.g. for LaTeX, you may also run `latexmk` manually.
   For Python scripts, you can also execute them the usual way with `python script.py`.
+  (Only do this when the software environment is activated.)
 
-Note that execution from within an IDE (PyCharmm, VS) may be tricky.
+Note that execution from within an IDE (PyCharmm, VS, Spider, IDLE, ...) may be tricky.
 When trying this, you need to make sure the IDE uses the right software environment and environment variables.
-IDEs tend to make abstraction of such details, also hiding many potential mistakes.
+IDEs tend to make abstractions of such details, also hiding potential mistakes.
 
 
 ### Keep clean
