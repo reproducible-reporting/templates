@@ -34,16 +34,5 @@ EOL
 source env/bin/activate
 pip install -U pip
 
-# Mandatory requirements for the template the work.
-if [ ! -f requirements.txt ]; then
-    cat > requirements.txt  << EOL
-pre-commit
-numpy
-matplotlib
-reprepbuild
-# -e ../../reprepbuild
-EOL
-fi
-
 # Install requirements, possibly updated after repository initialization
 python3 -m pip install -r requirements.txt

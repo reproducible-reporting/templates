@@ -1,0 +1,10 @@
+dependencies:
+- python
+- watchdog
+- numpy
+- matplotlib
+- latexmk
+- pre-commit
+- pip:
+  - reprepbuild
+  # - '-e ../../reprepbuild'

@@ -64,22 +64,6 @@ channels:
 - conda-forge
 EOL
 
-# Activate
+# Activate and install
 source env/bin/activate
-
-# Install some dependencies of RepRepBuild through mamba.
-if [ ! -f environment.yaml ]; then
-    cat > environment.yaml  << EOL
-dependencies:
-- python
-- watchdog
-- numpy
-- matplotlib
-- latexmk
-- pre-commit
-- pip:
-  - reprepbuild
-  # -e ../../reprepbuild
-EOL
-fi
 micromamba install -y --file environment.yaml

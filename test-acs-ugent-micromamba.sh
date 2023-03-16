@@ -10,7 +10,7 @@ if [ -d "${WORKDIR}" ]; then
 else
     cookiecutter ../templates --no-input slug=${WORKDIR} article=acs cover=ugent env=micromamba
     cd ${WORKDIR}
-    ./setup-env.sh
+    ./setup-env-micromamba.sh
 fi
 source env/bin/activate
 cd latest-draft

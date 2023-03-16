@@ -10,10 +10,6 @@
     "plain",
     "ugent"
   ],
-  "env": [
-    "pip",
-    "micromamba"
-  ],
   "_copy_without_render": [
     "*.tex",
     "*.cls"

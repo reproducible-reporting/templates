@@ -19,7 +19,3 @@ else
     mv latest-draft/latex-reply/reply-{{ cookiecutter.cover }}.tex latest-draft/latex-reply/reply.tex
     rm latest-draft/latex-reply/reply-*.tex
 fi
-
-# Select environment setup
-mv setup-env-{{ cookiecutter.env }}.sh setup-env.sh
-rm setup-env-*.sh
