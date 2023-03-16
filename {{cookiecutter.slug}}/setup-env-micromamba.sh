@@ -79,6 +79,7 @@ dependencies:
 - pre-commit
 - pip:
   - reprepbuild
+  # -e ../../reprepbuild
 EOL
 fi
 micromamba install -y --file environment.yaml

@@ -37,6 +37,7 @@ pre-commit
 numpy
 matplotlib
 reprepbuild
+# -e ../../reprepbuild
 EOL
 fi
 
