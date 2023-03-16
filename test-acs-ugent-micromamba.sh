@@ -14,7 +14,7 @@ else
 fi
 source env/bin/activate
 cd latest-draft
-rr
+rr -v -d explain
 cd ..
 git init
 git add .
