@@ -22,7 +22,7 @@ ideally using your operating system's software installation tool
 
 - Git: https://git-scm.com/
 - The cookiecutter: https://www.cookiecutter.io/
-- Inkscape: https://inkscape.org/
+- Inkscape >= 1.2: https://inkscape.org/ ([It must be executable as `inkscape` on the command-line](https://stackoverflow.com/a/22085247/494584).)
 - TexLive 2021: https://tug.org/texlive/
 - latexmk: https://personal.psu.edu/~jcc8/software/latexmk/
 - A Text editor compatible with [editorconfig](https://editorconfig.org/)
