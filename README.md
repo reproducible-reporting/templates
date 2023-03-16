@@ -9,7 +9,7 @@ You are free to select any license for publications derived from this template,
 but you have to link back to this repository.
 (This is done automatically when you follow the instructions in the documentation.)
 
-The usage of this template is documented in [`DOCUMENTATION.md`](DOCUMENTATION.md).
+The usage of this template is documented in [DOCUMENTATION.md](DOCUMENTATION.md).
 
 See [Reproducible Reporting](https://github.com/reproducible-reporting) for an overview.
 
