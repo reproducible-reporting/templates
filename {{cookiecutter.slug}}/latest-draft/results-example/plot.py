@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """Example plotting script."""
 
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load our matplotlibrc config. (Not done automagically to keep things clear.)
+matplotlib.rc_file("../matplotlibrc")
+
 
 def reprepbuild_info():
     """Give RepRep some info about inputs and outputs of this script."""
@@ -11,14 +18,6 @@ def reprepbuild_info():
 
 
 def main():
-    # Imports in main speed up the build. (No imports needed for reprepbuild_info.)
-    # Load our matplotlibrc config. (Not done automagically to keep things clear.)
-    import matplotlib
-
-    matplotlib.rc_file("../matplotlibrc")
-    import matplotlib.pyplot as plt
-    import numpy as np
-
     data_ext = np.loadtxt("../dataset-example/example.txt")
     data_int = np.loadtxt("generated.txt")
 
