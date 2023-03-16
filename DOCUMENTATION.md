@@ -60,44 +60,44 @@ You either take route **1a** + **2** or route **1b** + **2**.
 
 ### 1) Option a: Start a new publication
 
-Start a new publication with the [cookiecutter](https://github.com/cookiecutter/cookiecutter):
+- Start a new publication with the [cookiecutter](https://github.com/cookiecutter/cookiecutter):
 
-```bash
-cookiecutter https://github.com/reproducible-reporting/templates
-```
+  ```bash
+  cookiecutter https://github.com/reproducible-reporting/templates
+  ```
 
-Follow the instructions on the terminal. You will have to enter:
+  Follow the instructions on the terminal. You will have to enter:
 
-- `slug`.
-  This a short name for the directory name containing all the sources and compiled outputs.
-  Use lower-case characters, digits and hyphens only.
-- `article`.
-  The LaTeX article template you want to use.
-- `cover`
-  The LaTeX template for the cover letter.
+  - `slug`.
+    This a short name for the directory name containing all the sources and compiled outputs.
+    Use lower-case characters, digits and hyphens only.
+  - `article`.
+    The LaTeX article template you want to use.
+  - `cover`
+    The LaTeX template for the cover letter.
 
-Enter the newly created directory (`slug`) and initialize the Git repository
+- Enter the newly created directory (`slug`) and initialize the Git repository
 
-```bash
-cd 'slug'
-git init
-```
+  ```bash
+  cd 'slug'
+  git init
+  ```
 
-where `'slug'` should be replaced with the directory created by the cookiecutter.
+  where `'slug'` should be replaced with the directory created by the cookiecutter.
 
-Before making a first commit, define the software requirements,
-e.g. for post-processing and plotting, in `requirements.txt` **AND** `environment.yaml`.
+- Before making a first commit, define the software requirements,
+  e.g. for post-processing and plotting, in `requirements.txt` **AND** `environment.yaml`.
 
-Then you can add all the files, define a remote URL and push the initial contents online:
+- Now you can add all the files, commit them, define a remote URL and push the initial contents online:
 
-```bash
-git add .
-git commit -a -m "Initial commit"
-git remote add origin 'remote url'
-git push origin main -u
-```
+  ```bash
+  git add .
+  git commit -a -m "Initial commit"
+  git remote add origin 'remote url'
+  git push origin main -u
+  ```
 
-where you replace `'remote url'` by the correct one, which depends on your situation.
+  where you replace `'remote url'` by the correct one, which depends on your situation.
 
 
 ### 1) Option b: Clone an existing publication
