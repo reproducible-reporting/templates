@@ -10,12 +10,12 @@ python3 -m venv env
 # Just close your terminal when you're done or use micromamba instead of pip.
 # See https://github.com/pypa/virtualenv/issues/1124
 cat >> env/bin/activate << 'EOL'
-export SOURCE_DATE_EPOCH=0
+export SOURCE_DATE_EPOCH=315532800
 export TEXMFHOME="${VIRTUAL_ENV}/../texmf"
 EOL
 
 cat >> env/bin/activate.csv << 'EOL'
-setenv SOURCE_DATE_EPOCH 0
+setenv SOURCE_DATE_EPOCH 315532800
 setenv TEXMFHOME "${VIRTUAL_ENV}/../texmf"
 EOL
 
@@ -33,6 +33,7 @@ pip install -U pip
 # Mandatory requirements for the template the work.
 if [ ! -f requirements.txt ]; then
     cat > requirements.txt  << EOL
+pre-commit
 numpy
 matplotlib
 reprepbuild

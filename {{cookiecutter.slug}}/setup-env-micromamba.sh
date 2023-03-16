@@ -43,7 +43,7 @@ EOL
 mkdir -p env/etc/conda/activate.d
 cat > env/etc/conda/activate.d/reprep.sh << 'EOL'
 export SOURCE_DATE_EPOCH_CONDA_BACKUP="${SOURCE_DATE_EPOCH:-}"
-export SOURCE_DATE_EPOCH=0
+export SOURCE_DATE_EPOCH=315532800
 export TEXMFHOME_CONDA_BACKUP=${TEXMFHOME:-}
 export TEXMFHOME="${CONDA_PREFIX}/../texmf"
 EOL
@@ -75,6 +75,8 @@ dependencies:
 - watchdog
 - numpy
 - matplotlib
+- latexmk
+- pre-commit
 - pip:
   - reprepbuild
 EOL
