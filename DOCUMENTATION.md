@@ -14,34 +14,46 @@ The following competences are required (at a basic level) for this template to b
 Without these competences, it is still possible to contribute to a publication
 that uses this template, but it will be difficult to take the lead.
 
+
 ### Required software and configuration
 
 It is assumed that you have installed and configured the following software,
 ideally using your operating system's software installation tool
-(app store, package manager, ..).
+(app store, package manager, pip, ...).
 
 - Git: https://git-scm.com/
 - The cookiecutter: https://www.cookiecutter.io/
+  (Only needed to initialize a new publication.)
 - Inkscape >= 1.2: https://inkscape.org/ ([It must be executable as `inkscape` on the command-line](https://stackoverflow.com/a/22085247/494584).)
 - TexLive 2021: https://tug.org/texlive/
 - latexmk: https://personal.psu.edu/~jcc8/software/latexmk/
   (The `setup-env-*.sh` scripts will install the latest version from CTAN.
-  When using `setup-env-pip.sh` you must have Perl5 installed.)
+  When using `setup-env-pip.sh` you must have Perl5 installed to run latexmk.)
 - A Text editor compatible with [editorconfig](https://editorconfig.org/)
 
 A new dedicated
 [pip](https://pip.pypa.io/en/stable/) or [micromamba](https://mamba.readthedocs.io/)
 software environment is created for each manuscript.
-It is up to each co-author which of the two they prefer.
+It is up to each co-author which of the two they prefer:
 
-The goal is to isolate this software environment as much as possible from your operating system.
-However, perfect isolation is not possible yet at this stage.
-Some points of attention:
+1. A virtual env with **pip** can quickly install the dependencies
+   with low time, bandwidth and storage overhead.
+   You must have a Python version available, which is usually fine.
+2. A micromamba env (fastest and lightest way of using conda) is a bit more powerful than pip.
+   In principle, you can use it on a system without (a decent version of) Python.
+   It can also install non_python dependencies.
+   The main disadvantage is the time to setup, consumed bandwidth during install and disk usage.
+   Also, the cookiecutter requires Python >= 3.6 to work, so you will need python when
+   initializing a new publication from the template.
 
-- An always-active pip environment (activated in your shell profile)
+The goal is to isolate this software environment from your operating system as much as possible.
+However, perfect isolation is not possible yet at this time.
+A few points to keep in mind:
+
+- Another always-on pip environment (activated in your shell profile)
   may not work well when pip is used for the publication.
 
-- Similarly, an always-active conda environment (activated in your shell profile)
+- Similarly, another always-on conda environment (activated in your shell profile)
   may not work well when micromamba is used for the publication.
 
 - Using pip for the publication, on top of your default conda can work well.
@@ -87,6 +99,8 @@ You either take route **1a** + **2** or route **1b** + **2**.
 
 - Before making a first commit, define the software requirements,
   e.g. for post-processing and plotting, in `requirements.txt` **AND** `environment.yaml`.
+  If you must use micromamba (e.g. non-Python dependencies), then you can remove `requirements.txt`
+  and `setup-env-pip.sh`.
 
 - Now you can add all the files, commit them, define a remote URL and push the initial contents online:
 
@@ -118,11 +132,11 @@ where `'slug'` should be replaced with the directory created by `git clone`
 (It is assumed your current working directory is the `'slug'`
 defined in the previous section **1a** or **1b**.)
 
-- Install the software environment, either using one of the following two commands (not both):
+- Install the software environment, using either **one of the following two** commands (not both):
 
   ```bash
-  ./setup-env-pip.sh  # fast, assumes Python is already available.
-  ./setup-env-micromamba.sh  # a bit heavier, no existing Python required, may interfere with conda.
+  ./setup-env-pip.sh
+  ./setup-env-micromamba.sh
   ```
 
 - Activate your software environment:
@@ -132,8 +146,9 @@ defined in the previous section **1a** or **1b**.)
   ```
 
   This activation is needed whenever you open a new terminal.
-  If your find this too tedious, do not add the activation line in your `~/.bashrc`.
-  Use [direnv](https://github.com/direnv/direnv) instead.
+  If you find it too tedious to call the activation script over and over again,
+  give [direnv](https://github.com/direnv/direnv) a try.
+  Do not add the activation line in your `~/.bashrc`.
 
 - Install `pre-commit` into the new repository:
 
@@ -142,7 +157,7 @@ defined in the previous section **1a** or **1b**.)
   ```
 
   This is needed whenever your create or clone a Git repository.
-  (Normally that is only once per publication.)
+  (Normally, that is only once per publication.)
 
 - Now you should be able to build the template manuscript and related documents
   with RepRepBuild as follows:
@@ -153,7 +168,7 @@ defined in the previous section **1a** or **1b**.)
   ```
 
 When you are editing the source, the command `rrr` can be convenient.
-It will continuously rebuild the publication every time you save a file,
+It will continuously rebuild the publication every time you modify a file.
 
 The files generated by `rr` should in general not be committed.
 However, there are a few interesting exceptions:
@@ -167,7 +182,7 @@ However, there are a few interesting exceptions:
   With these data files, reproducibility can be verified,
   which is also of interest,
   e.g. when there are issues with the isolation of the software environment,
-  or when trying to reproduce old work for which the software environment is
+  or when one tries to reproduce old work for which the software environment is
   difficult to recreate.
 
 
@@ -266,17 +281,18 @@ All command-line arguments are just passed on to `ninja`.
 
 Run `ninja -h` for more details or consult the [Ninja usage documentation](https://ninja-build.org/manual.html#_running_ninja).
 
+
 ### Running parts of the build workflow
 
 There are two options:
 
-- You can either run `rr target-file`, where `target-file` is the file that needs to be rebuilt.
-  This will also rebuild dependencies if needed, and will do nothing if the target is already
-  up to date.
-- You may also build parts manually.
-  E.g. for LaTeX, you may also run `latexmk` manually.
-  For Python scripts, you can also execute them the usual way with `python script.py`.
-  (Only do this when the software environment is activated.)
+1. You run `rr target-file`, where `target-file` is the file that needs to be rebuilt.
+   This will also rebuild dependencies if needed, and will do nothing if the target is already
+   up to date.
+2. You may also build parts manually.
+   E.g. for LaTeX, you may run `latexmk` manually.
+   For Python scripts, you can also execute them the usual way with `python script.py`.
+   (Only do so when the software environment is activated.)
 
 Note that execution from within an IDE (PyCharmm, VS, Spider, IDLE, ...) may be tricky.
 When trying this, you need to make sure the IDE uses the right software environment and environment variables.
@@ -308,7 +324,7 @@ IDEs tend to make abstractions of such details, also hiding potential mistakes.
 - Write at least one sentence explaining the pull request on GitHub.
 
 
-## Data policies
+## Policies
 
 This section contains some instructions to facilitate data reuse and reproducibility.
 
@@ -337,14 +353,14 @@ Should:
 
 Must:
 
-- Separate data generation or collection from actual plotting.
+- Separate the data generation or collection from the actual plotting.
   (Do these in two separate Python scripts.)
   This means you commit the following to Git:
   - Data files containing the data shown in the plots.
     Text files like CSV are preferred when possible.
-    Also commit these when the data is auto-generated.
+    Also commit these files when the data is auto-generated.
     This may not seems useful, but it allows for verification of reproducibility.
-  - Scripts that generate data.
+  - Scripts that generate data, if applicable.
   - Scripts to generate the plot, using the above data as input.
     Use matplotlib unless you have good reasons not to.
   - A `README.md` summarizing the scripts and the data.
@@ -375,14 +391,19 @@ Things to avoid:
 
 Must:
 
-- Only use `dataset-<name>` directories when appropriate:
+- The `dataset-<name>` directories when appropriate when
+  the data cannot be regenerated from scratch,
+  or when it would be impractical to do so on a routine basis:
   - External data sets.
   - Super expensive calculations that you carried out separately.
   - Data generated with closed-source software.
     (Avoid closed-source software when you have the choice.)
+  - Data generated with specialized hardware not generally available.
+  - Manually curated data.
 - Use semantic file and directory names to organize your data.
 - Add as much as possible scripts and implementations to regenerate the data,
   with exactly the same file and directory names as in the data set.
+  Integrate these scripts as much as possible RepRepBuild.
 - Add a `README.md` file explaining the following:
   - How was the data computed or collected?
   - Which software + version was used?
@@ -392,8 +413,10 @@ Must:
 
 Should:
 
-- When data sets become to large to store on Git LFS,
-  store the data on an appropriate UGent share.
+- When data sets become too large for Git (more than few MB), use Git LFS.
+- When data sets become too large for Git LFS (more than few 100 MB), use University-provides storage.
+  (At UGent, these would be the "shares".)
+  Also document clearly where the data is stored, how to access and who has permissions.
 
 Things to avoid:
 
@@ -415,7 +438,7 @@ Things to avoid:
 
 Must:
 
-- List external software dependencies in `requirements.txt` or `environment.yaml`,
+- List software dependencies in `requirements.txt` or `environment.yaml`,
   such that they can be installed with `pip` or `conda` by all co-authors.
   Specify the version (if relevant).
 
@@ -431,7 +454,7 @@ Must:
   make open-source releases of all versions used in the paper.
   In addition to `requirements.txt` or `environment.yaml`,
   also refer to the source repository and the version of your package in the `README.md`
-  of the corresponding `results-<name>` directories.
+  of the corresponding `results-<name>` or `dataset-<name>` directories.
 
   If you Python package is highly experimental and you're not comfortable releasing it yet,
   you can include it in the publication repository,
