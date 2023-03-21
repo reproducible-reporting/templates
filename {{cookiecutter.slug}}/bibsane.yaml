@@ -1,0 +1,67 @@
+bibtex_out: references.bib
+drop_entry_types: ["control"]
+normalize_doi: true
+duplicate_id: merge
+duplicate_doi: merge
+preambles_allowed: false
+normalize_whitespace: true
+fix_page_double_hyphen: true
+abbreviate_journal: 'journal_abbreviation_cache.json'
+sort: true
+citation_policies:
+  article:
+    author: must
+    journal: must
+    number: may
+    pages: must
+    title: must
+    volume: must
+    year: must
+    doi: must
+  book:
+    author: must
+    title: must
+    publisher: must
+    year: must
+    month: may
+    isbn: must
+    editor: may
+    doi: may
+  phdthesis:
+    author: must
+    title: must
+    school: must
+    year: must
+    type: may
+    address: may
+    month: may
+  incollection:
+    author: must
+    editor: must
+    title: must
+    booktitle: must
+    edition: may
+    publisher: must
+    isbn: must
+    doi: must
+    address: may
+    month: may
+    year: must
+    pages: must
+  misc.arxiv:
+    author: must
+    title: must
+    year: must
+    eprint: must
+    archiveprefix: must
+  misc.url:
+    title: must
+    url: must
+    urldate: must
+  misc.dataset:
+    author: must
+    title: must
+    year: must
+    doi: must
+    urldate: must
+    publisher: must

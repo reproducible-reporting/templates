@@ -1,1 +1,49 @@
-{{cookiecutter.slug}}/.pre-commit-config.yaml
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+    - id: check-added-large-files
+      args: ["--maxkb=500"]
+    - id: check-ast
+    - id: check-case-conflict
+    - id: check-executables-have-shebangs
+    - id: check-json
+    - id: check-merge-conflict
+    - id: check-symlinks
+    - id: check-vcs-permalinks
+    - id: check-yaml
+    - id: debug-statements
+    - id: detect-private-key
+    - id: destroyed-symlinks
+    - id: end-of-file-fixer
+    - id: fix-byte-order-marker
+    - id: mixed-line-ending
+    - id: pretty-format-json
+      args: ["--autofix", "--no-sort-keys"]
+    - id: trailing-whitespace
+      exclude: \.aux$
+- repo: https://github.com/lovesegfault/beautysh
+  rev: v6.2.1
+  hooks:
+    - id: beautysh
+- repo: https://github.com/psf/black
+  rev: 23.1.0
+  hooks:
+    - id: black
+      args: ["--line-length", "100"]
+- repo: https://github.com/asottile/pyupgrade
+  rev: v3.3.1
+  hooks:
+  - id: pyupgrade
+    args: [--py310-plus]
+- repo: https://github.com/pycqa/isort
+  rev: 5.12.0
+  hooks:
+  - id: isort
+    args: ["--line-length", "100", "--profile", "black", "--filter-files"]
+    name: isort
+- repo: https://github.com/Lucas-C/pre-commit-hooks
+  rev: v1.4.2
+  hooks:
+    - id: remove-crlf
+      exclude_types: [binary]
