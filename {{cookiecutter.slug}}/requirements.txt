@@ -2,5 +2,6 @@
 pre-commit
 numpy
 matplotlib
-reprepbuild
 pytest
+reprepbuild
+bibsane
