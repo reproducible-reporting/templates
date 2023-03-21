@@ -22,6 +22,7 @@ ideally using your operating system's software installation tool
 (app store, package manager, pip, ...).
 
 - Git: https://git-scm.com/
+- Git LFS: https://git-lfs.com/
 - The cookiecutter: https://www.cookiecutter.io/
   (Only needed to initialize a new publication.)
 - Inkscape >= 1.2: https://inkscape.org/
