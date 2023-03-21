@@ -1,20 +1,36 @@
 #!/usr/bin/env python3
 """Example data generation script."""
 
-
-def reprepbuild_info():
-    """Give RepRep some info about inputs and outputs of this script."""
-    return {
-        "inputs": [],
-        "outputs": ["generated.txt"],
-    }
+import numpy as np
 
 
-def main():
-    # Seems ugly, but will speed things up.
-    # It allows reprepbuild_info to be called without waiting for these imports.
-    import numpy as np
+def reprepbuild_cases():
+    """Generator over different ways to run this script.
 
+    This is a generator, which yields lists of arguments for reprepbuild_info.
+    These cases will be executed in parrallel by RepRepBuild (ninja).
+    """
+    yield [0]
+    yield [1]
+
+
+def reprepbuild_info(case):
+    """Give RepRep some info on the inputs and outputs to build for case `param`.
+
+    This transforms the simple cases list into a rich dictionary of arguments for main.
+    The fields "inputs" and "outputs" are special:
+    they are lists of filenames used for dependency tracking.
+    """
+    return {"shift": case * np.pi / 2, "outputs": [f"data_{case}.txt"]}
+
+
+def main(shift, outputs):
+    """Main data generation program."""
     x = np.linspace(0, 2 * np.pi, 50)
-    data = np.array([x, np.sin(x), np.cos(x)]).T
-    np.savetxt("generated.txt", data)
+    data = np.array([x, np.cos(x + shift)]).T
+    np.savetxt(outputs[0], data)
+
+
+if __name__ == "__main__":
+    for build_case in reprepbuild_cases():
+        main(**reprepbuild_info(*build_case))

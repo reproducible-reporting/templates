@@ -7,6 +7,8 @@ if [ "{{ cookiecutter.article }}" == "none" ]; then
 else
     mv latest-draft/latex-article/article-{{ cookiecutter.article }}.tex latest-draft/latex-article/article.tex
     rm latest-draft/latex-article/article-*.tex
+    mv latest-draft/latex-si/si-{{ cookiecutter.article }}.tex latest-draft/latex-si/si.tex
+    rm latest-draft/latex-si/si-*.tex
 fi
 
 # Select the template for the cover and reply

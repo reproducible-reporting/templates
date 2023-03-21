@@ -1,8 +1,11 @@
 # Submission form data
 
-Link to submission platform: << URL >>
+URL Journal:
+URL Author Guide:
+URL Reference style guide:
+URL submission platform:
+Submission with username:
 
-Submission with username << USER >>
 
 ## Add sections and all info (to be) filled into the forms below
 

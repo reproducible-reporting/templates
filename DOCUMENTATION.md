@@ -24,7 +24,9 @@ ideally using your operating system's software installation tool
 - Git: https://git-scm.com/
 - The cookiecutter: https://www.cookiecutter.io/
   (Only needed to initialize a new publication.)
-- Inkscape >= 1.2: https://inkscape.org/ ([It must be executable as `inkscape` on the command-line](https://stackoverflow.com/a/22085247/494584).)
+- Inkscape >= 1.2: https://inkscape.org/
+  (Only needed when the source contains SVG files.
+  [It must be executable as `inkscape` on the command-line](https://stackoverflow.com/a/22085247/494584).)
 - TexLive 2021: https://tug.org/texlive/
 - latexmk: https://personal.psu.edu/~jcc8/software/latexmk/
   (The `setup-env-*.sh` scripts will install the latest version from CTAN.
@@ -36,14 +38,15 @@ A new dedicated
 software environment is created for each manuscript.
 It is up to each co-author which of the two they prefer:
 
-1. A virtual env with **pip** can quickly install the dependencies
+1. A virtual environment with **pip** can install the dependencies
    with low time, bandwidth and storage overhead.
-   You must have a Python version available, which is usually fine.
-2. A micromamba env (fastest and lightest way of using conda) is a bit more powerful than pip.
+   You must have a Python version available.
+2. A **micromamba** environment (the fastest and lightest way of using conda)
+   is a bit more powerful than pip.
    In principle, you can use it on a system without (a decent version of) Python.
    It can also install non_python dependencies.
-   The main disadvantage is the time to setup, consumed bandwidth during install and disk usage.
-   Also, the cookiecutter requires Python >= 3.6 to work, so you will need python when
+   The main disadvantage is the time to setup, consumed bandwidth during install, and disk usage.
+   Also, the cookiecutter requires Python >= 3.6 to work, so you will need Python when
    initializing a new publication from the template.
 
 The goal is to isolate this software environment from your operating system as much as possible.
@@ -329,7 +332,7 @@ IDEs tend to make abstractions of such details, also hiding potential mistakes.
 This section contains some instructions to facilitate data reuse and reproducibility.
 
 For each section, the core idea is to store as much source material as possible.
-When a file is larger than 5 MB, use Git LFS.
+
 
 ### Tex sources
 
@@ -339,6 +342,14 @@ Must:
 - Every LaTeX package you don't use is a good package.
 - Every sentence starts on a new line in the tex source.
 - To facilitate reviewing the PDF, use single-column and double line spacing.
+- Add a `latexmkrc` configuration for for `latexmk`:
+  ```
+  $pdf_mode = 1;
+  $pdflatex = 'pdflatex -interaction=batchmode -file-line-error';
+  ```
+  This is file is already present in the template, and is needed for integration with RepRepBuild.
+  It also guarantees that the invocation of `latexmk` outside RepRepBuild produces the correct PDF.
+
 
 Should:
 
@@ -413,10 +424,18 @@ Must:
 
 Should:
 
-- When data sets become too large for Git (more than few MB), use Git LFS.
-- When data sets become too large for Git LFS (more than few 100 MB), use University-provides storage.
-  (At UGent, these would be the "shares".)
-  Also document clearly where the data is stored, how to access and who has permissions.
+- When data sets become large for Git (more than 500 kB), use [Git LFS](https://git-lfs.com/).
+  The threshold can be increased for convenience,
+  but keep in mind that most remote Git repositories have storage quota.
+  For GitHub, the maximum seems to be 5 GB at the moment (for the entire history).
+- When data sets become large for Git LFS (more than 50 MB), use University-provided storage.
+  Check your Git LFS quota to define a sensible threshold.
+  At the time of writing, this is 2 GB (all files combined) for GitHub.
+  When offloading data outside the Git repository,
+  document clearly where the data is stored, how to access and who has access permissions.
+- For some files, e.g. a zipped collection of data files,
+  there are no concerns that the zipping itself is difficult to reproduce,
+  so you can decide not to store the zip file separately and to add it to `.gitignore` instead.
 
 Things to avoid:
 

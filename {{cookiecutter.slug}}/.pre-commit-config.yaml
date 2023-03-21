@@ -3,6 +3,7 @@ repos:
   rev: v4.4.0
   hooks:
     - id: check-added-large-files
+      args: ["--maxkb=500"]
     - id: check-ast
     - id: check-case-conflict
     - id: check-executables-have-shebangs
@@ -10,6 +11,7 @@ repos:
     - id: check-merge-conflict
     - id: check-symlinks
     - id: check-vcs-permalinks
+    - id: check-yaml
     - id: debug-statements
     - id: detect-private-key
     - id: destroyed-symlinks
@@ -19,6 +21,7 @@ repos:
     - id: pretty-format-json
       args: ["--autofix", "--no-sort-keys"]
     - id: trailing-whitespace
+      exclude: \.aux$
 - repo: https://github.com/lovesegfault/beautysh
   rev: v6.2.1
   hooks:
@@ -43,3 +46,4 @@ repos:
   rev: v1.4.2
   hooks:
     - id: remove-crlf
+      exclude_types: [binary]

@@ -1,4 +1,4 @@
-*/latex-*/*.aux
+# LaTeX
 */latex-*/*.log
 */latex-*/*.fls
 */latex-*/*.toc
@@ -14,9 +14,19 @@
 */latex-*/*.png
 */latex-*/*.tiff
 */latex-*/*.tif
-*.depfile
+*/uploads/*.zip
 acs-*.bib
-build.ninja
+
+# Software environment
 env
+
+# Ninja
 .ninja_log
+build.ninja
+*.dd
+*.depfile
+
+# Python
 __pycache__
+dist
+build

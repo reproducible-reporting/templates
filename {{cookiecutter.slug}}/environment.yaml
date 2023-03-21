@@ -5,6 +5,6 @@ dependencies:
 - matplotlib
 - latexmk
 - pre-commit
+- pytest
 - pip:
   - reprepbuild
-  # - '-e ../../reprepbuild'

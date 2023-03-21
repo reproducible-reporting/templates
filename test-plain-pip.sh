@@ -13,6 +13,7 @@ else
     ./setup-env-pip.sh
 fi
 source env/bin/activate
+(cd ../../reprepbuild; pip install -e .)
 cd latest-draft
 rr -v -d explain
 cd ..

@@ -10,26 +10,29 @@ matplotlib.rc_file("../matplotlibrc")
 
 
 def reprepbuild_info():
-    """Give RepRep some info about inputs and outputs of this script."""
+    """Give RepRep some info about inputs and outputs of this script.
+
+    The entire dictionary is passed as keyword arguments to main.
+    Feel free to add more fields.
+    Just keep in mind that "inputs" and "outputs" are special:
+    they are lists of filenames used for dependency tracking.
+    """
     return {
-        "inputs": ["../dataset-example/example.txt", "generated.txt"],
+        "inputs": ["../dataset-example/example.txt", "data_0.txt", "data_1.txt"],
         "outputs": ["../latex-article/plot-example.pdf"],
     }
 
 
-def main():
-    data_ext = np.loadtxt("../dataset-example/example.txt")
-    data_int = np.loadtxt("generated.txt")
-
+def main(inputs, outputs):
     fig, ax = plt.subplots()
-    ax.plot(data_int[:, 0], data_int[:, 1])
-    ax.plot(data_int[:, 0], data_int[:, 2])
-    ax.plot(data_ext[:, 0], data_ext[:, 1])
+    for fn_in in inputs:
+        data = np.loadtxt(fn_in)
+        ax.plot(data[:, 0], data[:, 1])
     ax.set_title("Usually, you don't need an axes title")
-    ax.set_xlabel("x [1]")
-    ax.set_ylabel("y [1]")
-    fig.savefig("../latex-article/plot-example.pdf")
+    ax.set_xlabel("x [unit for x]")
+    ax.set_ylabel("y [unit for y]")
+    fig.savefig(outputs[0])
 
 
 if __name__ == "__main__":
-    main()
+    main(**reprepbuild_info())

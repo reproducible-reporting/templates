@@ -1,0 +1,65 @@
+% Preamble
+\documentclass[11pt]{article}
+
+% Make PDFLaTeX builds reproducible
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\pdfinfo{/Producer()/Creator()}
+
+% Packages
+\usepackage[T1]{fontenc} % Use modern font encodings
+\usepackage{mathtools}
+\usepackage{lineno}
+\usepackage[a4paper,left=2.5cm,right=2cm,top=3.5cm,bottom=3cm,headsep=16pt,headheight=16pt]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Tableu 10 colors, for consistency with matplotlib,
+% and figures in inkscape.
+\definecolor{tab.blue}{HTML}{1f77b4}
+\definecolor{tab.orange}{HTML}{ff7f0e}
+\definecolor{tab.green}{HTML}{2ca02c}
+\definecolor{tab.red}{HTML}{d62728}
+\definecolor{tab.purple}{HTML}{9467bd}
+\definecolor{tab.brown}{HTML}{8c564b}
+\definecolor{tab.pink}{HTML}{e377c2}
+\definecolor{tab.gray}{HTML}{7f7f7f}
+\definecolor{tab.olive}{HTML}{bcbd22}
+\definecolor{tab.cyan}{HTML}{17becf}
+
+% Settings for hyperref
+\hypersetup{allcolors=tab.blue,colorlinks=true,linktoc=none}
+
+% Configuration
+\renewcommand\thetable{S\arabic{table}}
+\renewcommand\thefigure{S\arabic{figure}}
+\renewcommand\thesection{S\arabic{section}}
+\renewcommand\theequation{S\arabic{equation}}
+
+% Title info
+\title{Supplementary information for ``Great title''}
+\author{ADD AUTHORS LATE$^\text{*,\#}$}
+\date{\today}
+
+% Document
+\begin{document}
+
+    \maketitle
+    Author affiliations and contact authors:
+    \begin{itemize}
+        \item[*] Center for Molecular Modeling (CMM), Ghent University, Technologiepark-Zwijnaarde 46, B-9052, Ghent, Belgium
+        \item[\#] \href{mailto:foo@bar.com}{foo@bar.com}
+    \end{itemize}
+
+    \pagenumbering{gobble}
+    \tableofcontents
+    \appendix
+
+    \newpage
+    \pagenumbering{arabic}
+
+    \section{ToDo}
+    \label{sec:todo}
+
+\end{document}
