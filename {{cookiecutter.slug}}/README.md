@@ -1,7 +1,6 @@
 # Publication Title
 
-Created with [![Reproducible Reporting](https://raw.githubusercontent.com/reproducible-reporting/.github/main/profile/logo.svg)](https://github.com/reproducible-reporting)
-[templates](https://raw.githubusercontent.com/reprodicible-reporting/templates).
+Created with [![Reproducible Reporting](https://raw.githubusercontent.com/reproducible-reporting/.github/main/profile/logo.svg)](https://github.com/reproducible-reporting).
 
 ## Copyright disclaimer and license conditions
 
