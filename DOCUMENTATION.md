@@ -150,9 +150,12 @@ defined in the previous section **1a** or **1b**.)
   ```
 
   This activation is needed whenever you open a new terminal.
+  It is not recommended to add publications-specific activation scripts to your `~/.bashrc`.
   If you find it too tedious to call the activation script over and over again,
-  give [direnv](https://github.com/direnv/direnv) a try.
-  Do not add the activation line in your `~/.bashrc`.
+  give [`direnv`](https://github.com/direnv/direnv) a try.
+  Once `direnv` is installed and configured in your shell profile,
+  you only need to allow it once with `direnv allow .`,
+  and the `activate` script is automatically loaded when you change to the source directory.
 
 - Install `pre-commit` into the new repository:
 
