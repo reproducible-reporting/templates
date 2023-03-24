@@ -3,7 +3,6 @@ dependencies:
 - watchdog
 - numpy
 - matplotlib
-- latexmk
 - pre-commit
 - pytest
 - pip:

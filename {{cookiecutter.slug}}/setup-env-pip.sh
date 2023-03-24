@@ -5,10 +5,6 @@ set -e
 echo "Create the venv"
 python3 -m venv env
 
-echo "Download and install latexmk"
-python3 -c "import zipfile, urllib.request, io; blob_zip = urllib.request.urlopen('https://mirrors.ctan.org/support/latexmk.zip').read(); blob_pl = zipfile.ZipFile(io.BytesIO(blob_zip)).open('latexmk/latexmk.pl').read(); open('env/bin/latexmk', 'wb').write(blob_pl)"
-chmod +x env/bin/latexmk
-
 # Update activation scripts with extra variables.
 # The deactivation is not patched because that would be too tedious and fragile.
 # Just close your terminal when you're done or use micromamba instead of pip.
