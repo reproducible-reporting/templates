@@ -25,7 +25,7 @@ env
 .ninja_log
 build.ninja
 *.dd
-*.depfile
+*.d
 
 # Python
 __pycache__
