@@ -330,9 +330,11 @@ For each section, the core idea is to store as much source material as possible.
 Must:
 
 - All documents are written in LaTeX.
-- Every LaTeX package you don't use is a good package.
+- Every LaTeX package you don't use, is a good package.
 - Every sentence starts on a new line in the tex source.
 - To facilitate reviewing the PDF, use single-column and double line spacing.
+- Use [BibSane](https://github.com/reproducible-reporting/bibsane) to keep your BibTeX files sane.
+- Hint: [Quick DOI tot BIB conversion](https://www.doi2bib.org)
 
 Should:
 
