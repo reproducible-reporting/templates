@@ -2,8 +2,10 @@
 set -e
 # This script assumes you have a running and somewhat modern Python environment.
 
+PYTHON3=python3
+
 echo "Create the venv"
-python3 -m venv env
+${PYTHON3} -m venv env
 
 # Update activation scripts with extra variables.
 # The deactivation is not patched because that would be too tedious and fragile.
@@ -28,7 +30,7 @@ EOL
 
 # Activate
 source env/bin/activate
-pip install -U pip
+${PYTHON3} -m pip install -U pip
 
 # Install requirements, possibly updated after repository initialization
-python3 -m pip install -r requirements.txt
+${PYTHON3} -m pip install -r requirements.txt
