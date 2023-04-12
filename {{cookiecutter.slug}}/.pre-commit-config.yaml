@@ -47,8 +47,3 @@ repos:
   hooks:
     - id: remove-crlf
       exclude_types: [binary]
-- repo: https://github.com/reproducible-reporting/bibsane
-  rev: v0.1.0
-  hooks:
-    - id: bibsane
-      args: ["-c", "bibsane.yaml"]

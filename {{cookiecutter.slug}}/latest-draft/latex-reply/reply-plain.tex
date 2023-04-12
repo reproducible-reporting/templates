@@ -46,13 +46,20 @@
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{0pt}
 
-% Central place to control how the replies should be formatted
+% Workaround for odd minipage behavior
+\makeatletter
+\newcommand{\@minipagerestore}{\setlength{\parskip}{0.5em}\setlength{\parindent}{0.0em}}
+\makeatother
+
+% Central place to control how the reviewer commends and replies should be formatted
+\newenvironment{reviewer}{\itshape}{}
+
+\definecolor{grayreply}{RGB}{96,96,96}
 \newenvironment{reply}{%
-    \begin{adjustwidth}{1cm}{}
-    \color{gray}%
-}{%
-    \end{adjustwidth}
-}
+    \begin{adjustwidth}{1cm}{1cm}%
+    \color{grayreply}\textbf{Reply:\ }%
+    \ignorespaces%
+}{\end{adjustwidth}}
 
 \begin{document}
 
@@ -60,64 +67,98 @@
 
 \subsection*{Editorial Review:}
 
-\begin{enumerate}
-    \item
-    Comment from the editor.
-    \begin{reply}
-        Our response.
-    \end{reply}
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        Comment from the editor.
+    \end{reviewer}
 
-    \item
-    Comment from the editor.
     \begin{reply}
         Our response.
     \end{reply}
-\end{enumerate}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        Comment from the editor.
+    \end{reviewer}
+
+    \begin{reply}
+        Our response.
+    \end{reply}
+\end{minipage}
 
 
 \subsection*{Reviewer: 1}
 
-General comments from reviewer 1.
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        General comments from reviewer 1.
+    \end{reviewer}
 
-\begin{reply}
-    We are grateful for the positive words and constructive criticism, as they helped us to improve the manuscript significantly.
-\end{reply}
+    \begin{reply}
+        We are grateful for the positive words and constructive criticism, as they helped us to improve the manuscript significantly.
+    \end{reply}
+\end{minipage}
 
-Some more general comments from Reviewer 1 to introduce the specific comments.
 
-\begin{enumerate}[parsep=0.5em]
-    \item First specific comment.
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        Some more general comments from Reviewer 1 to introduce the specific comments.
+
+        1. First specific comment
+    \end{reviewer}
+
     \begin{reply}
         Our reply to the first specific comment
     \end{reply}
+\end{minipage}
 
-    \item Second specific comment.
+
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        2. Second specific comment.
+    \end{reviewer}
+
     \begin{reply}
         Our reply to the second specific comment
     \end{reply}
-\end{enumerate}
+\end{minipage}
 
 \subsection*{Reviewer: 2}
 
-General comments from reviewer 2.
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        General comments from reviewer 2.
+    \end{reviewer}
 
-\begin{reply}
-    We appreciate your positive words and have incoporated your suggestions in the revised manuscript.
-\end{reply}
+    \begin{reply}
+        We are grateful for the positive words and constructive criticism, as they helped us to improve the manuscript significantly.
+    \end{reply}
+\end{minipage}
 
-Some more general comments from Reviewer 2 to introduce the specific comments.
 
-\begin{enumerate}[parsep=0.5em]
-    \item First specific comment.
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        Some more general comments from Reviewer 2 to introduce the specific comments.
+
+        1. First specific comment
+    \end{reviewer}
+
     \begin{reply}
         Our reply to the first specific comment
     \end{reply}
+\end{minipage}
 
-    \item Second specific comment.
+
+\begin{minipage}{\linewidth}
+    \begin{reviewer}
+        2. Second specific comment.
+    \end{reviewer}
+
     \begin{reply}
         Our reply to the second specific comment
     \end{reply}
-\end{enumerate}
+\end{minipage}
 
 
 \end{document}

@@ -145,9 +145,9 @@
     \parbox{\indentedwidth}{\raggedright
         \ignorespaces #1\\[1em]
         \ifugl@signature
-            \includegraphics[height=8\medskipamount]{signature}\\[1em]
+            \includegraphics[height=4\medskipamount]{signature}\\[1em]%
         \else
-            [8\medskipamount]%
+            \-\\[4\medskipamount]%
         \fi
         \fromname\\ \fromposition%
     }\par
