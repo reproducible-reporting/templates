@@ -16,6 +16,8 @@
 */latex-*/*.tiff
 */latex-*/*.tif
 */latex-*/*-diff.*
+*/latex-*/*.synctex*
+!*/latex-*/*-old.*
 */uploads/*.zip
 acs-*.bib
 
