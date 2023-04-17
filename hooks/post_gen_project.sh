@@ -3,12 +3,12 @@
 # Select template for the article text
 if [ "{{ cookiecutter.article }}" == "none" ]; then
     rm -r latest-draft/latex-article
-    rm -r latest-draft/latex-si
+    rm -r latest-draft/latex-supp
 else
     mv latest-draft/latex-article/article-{{ cookiecutter.article }}.tex latest-draft/latex-article/article.tex
     rm latest-draft/latex-article/article-*.tex
-    mv latest-draft/latex-si/si-{{ cookiecutter.article }}.tex latest-draft/latex-si/si.tex
-    rm latest-draft/latex-si/si-*.tex
+    mv latest-draft/latex-supp/supp-{{ cookiecutter.article }}.tex latest-draft/latex-supp/supp.tex
+    rm latest-draft/latex-supp/supp-*.tex
 fi
 
 # Select the template for the cover and reply
