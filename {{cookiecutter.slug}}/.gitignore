@@ -1,5 +1,5 @@
 # LaTeX
-*/latex-*/*.first.aux
+*/latex-*/*.aux
 */latex-*/*.log
 */latex-*/*.fls
 */latex-*/*.toc

@@ -24,7 +24,7 @@ import numpy as np
 
 def reprepbuild_info():
     """Give RepRep some info on the inputs and outputs."""
-    return {"inputs": ["data_0.txt"], "outputs": ["../latex-article/table.tex"]}
+    return {"inputs": ["data_0.txt"], "outputs": ["../latex-article/table.itex"]}
 
 
 TABLE_TEMPLATE_HEAD = r"""
