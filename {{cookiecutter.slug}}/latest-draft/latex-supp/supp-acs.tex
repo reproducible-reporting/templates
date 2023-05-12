@@ -13,6 +13,19 @@
 \usepackage{graphicx}
 \usepackage{lineno}
 
+% \warninput command: like \input but prints a warning
+% when a file is missing and lets latex carry on.
+\makeatletter
+\newcommand{\warninput}[1]{%
+  \filename@parse{#1}%
+  \InputIfFileExists{#1}{}{%
+    \message{LaTeX Warning: File `%
+    \filename@base.\ifx\filename@ext\relax tex\else\filename@ext\fi'%
+    not found on input line \the\inputlineno}%
+  }%
+}
+\makeatother
+
 % Configuration
 \SectionNumbersOn
 \renewcommand\thetable{S\arabic{table}}
