@@ -39,3 +39,10 @@ To be completed as the publication is written:
 - `YYYY-MM-DD-revised`:  Some comment
 - ...
 - [`latest-draft`](latest-draft/): The current version
+
+## Must-do after cloning this repository locally
+
+```bash
+pre-commit install
+git lfs install
+```
