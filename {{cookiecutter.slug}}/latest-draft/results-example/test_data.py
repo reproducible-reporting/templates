@@ -4,7 +4,7 @@
 import numpy as np
 import pytest
 
-FILENAMES = ["../dataset-example/example.txt", "data_0.txt", "data_1.txt"]
+FILENAMES = ["../dataset-example/example.txt", "data_00.txt", "data_01.txt"]
 
 
 def reprepbuild_info():

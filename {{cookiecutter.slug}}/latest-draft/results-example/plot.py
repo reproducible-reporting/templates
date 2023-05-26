@@ -18,7 +18,7 @@ def reprepbuild_info():
     they are lists of filenames used for dependency tracking.
     """
     return {
-        "inputs": ["../dataset-example/example.txt", "data_0.txt", "data_1.txt"],
+        "inputs": ["../dataset-example/example.txt", "data_00.txt", "data_01.txt"],
         "outputs": ["../latex-article/plot-example.pdf"],
     }
 

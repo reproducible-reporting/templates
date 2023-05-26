@@ -3,6 +3,8 @@
 
 import numpy as np
 
+REPREPBUILD_CASE_FMT = "data_{:02d}"
+
 
 def reprepbuild_cases():
     """Generator over different ways to run this script.
@@ -21,7 +23,7 @@ def reprepbuild_info(case):
     The fields "inputs" and "outputs" are special:
     they are lists of filenames used for dependency tracking.
     """
-    return {"shift": case * np.pi / 2, "outputs": [f"data_{case}.txt"]}
+    return {"shift": case * np.pi / 2, "outputs": [f"data_{case:02d}.txt"]}
 
 
 def main(shift, outputs):

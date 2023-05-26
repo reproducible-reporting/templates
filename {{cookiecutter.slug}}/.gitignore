@@ -34,3 +34,6 @@ build.ninja
 __pycache__
 dist
 build
+
+# Scripts
+*/results-*/*.log
