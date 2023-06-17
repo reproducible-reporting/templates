@@ -5,7 +5,6 @@
 \pdfinfoomitdate=1
 \pdfsuppressptexinfo=-1
 \pdftrailerid{}
-\pdfinfo{/Producer()/Creator()}
 
 % Packages
 \usepackage[T1]{fontenc} % Use modern font encodings
@@ -41,8 +40,8 @@
 \definecolor{tab.olive}{HTML}{bcbd22}
 \definecolor{tab.cyan}{HTML}{17becf}
 
-% Settings for hyperref
-\hypersetup{allcolors=tab.blue,colorlinks=true,linktoc=none}
+% Settings for hyperref, including reproducibility fix
+\hypersetup{allcolors=tab.blue,colorlinks=true,linktoc=none,pdfcreator={},pdfproducer={}}
 
 % Configuration
 \renewcommand\thetable{S\arabic{table}}

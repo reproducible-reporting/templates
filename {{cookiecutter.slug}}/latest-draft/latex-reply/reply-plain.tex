@@ -4,7 +4,6 @@
 \pdfinfoomitdate=1
 \pdfsuppressptexinfo=-1
 \pdftrailerid{}
-\pdfinfo{/Producer()/Creator()}
 
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -31,8 +30,8 @@
 \definecolor{tab.olive}{HTML}{bcbd22}
 \definecolor{tab.cyan}{HTML}{17becf}
 
-% Settings for hyperref
-\hypersetup{allcolors=tab.blue,colorlinks=true,linktoc=none}
+% Settings for hyperref, including reproducibility fix
+\hypersetup{allcolors=tab.blue,colorlinks=true,linktoc=none,pdfcreator={},pdfproducer={}}
 
 % Header and footer
 \lohead*{}
