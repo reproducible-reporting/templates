@@ -3,6 +3,12 @@
   "article": [
     "none",
     "plain",
+    "acs",
+    "aip"
+  ],
+  "supp": [
+    "none",
+    "plain",
     "acs"
   ],
   "cover": [

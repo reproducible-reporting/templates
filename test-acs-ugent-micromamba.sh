@@ -5,15 +5,16 @@ mkdir -p nobackup
 cd nobackup
 WORKDIR="acs-ugent-micromamba"
 if [ -d "${WORKDIR}" ]; then
-    cookiecutter ../templates -f --no-input slug=${WORKDIR} article=acs cover=ugent env=micromamba
+    cookiecutter ../templates -f --no-input slug=${WORKDIR} article=acs supp=acs cover=ugent env=micromamba
     cd ${WORKDIR}
 else
-    cookiecutter ../templates --no-input slug=${WORKDIR} article=acs cover=ugent env=micromamba
+    cookiecutter ../templates --no-input slug=${WORKDIR} article=acs supp=acs cover=ugent env=micromamba
     cd ${WORKDIR}
     ./setup-env-micromamba.sh
 fi
 source env/bin/activate
-(cd ../../reprepbuild; pip install -e .)
+pip install -e ../../bibsane
+pip install -e ../../reprepbuild
 cd latest-draft
 rr -v -d explain
 cd ..

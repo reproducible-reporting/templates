@@ -3,11 +3,16 @@
 # Select template for the article text
 if [ "{{ cookiecutter.article }}" == "none" ]; then
     rm -r latest-draft/latex-article
-    rm -r latest-draft/latex-supp
 else
     mv latest-draft/latex-article/article-{{ cookiecutter.article }}.tex latest-draft/latex-article/article.tex
     rm latest-draft/latex-article/article-*.tex
-    mv latest-draft/latex-supp/supp-{{ cookiecutter.article }}.tex latest-draft/latex-supp/supp.tex
+fi
+
+# Select template for the supporting information or supplementary material
+if [ "{{ cookiecutter.supp }}" == "none" ]; then
+    rm -r latest-draft/latex-supp
+else
+    mv latest-draft/latex-supp/supp-{{ cookiecutter.supp }}.tex latest-draft/latex-supp/supp.tex
     rm latest-draft/latex-supp/supp-*.tex
 fi
 

@@ -3,12 +3,12 @@ set -e
 cd ..
 mkdir -p nobackup
 cd nobackup
-WORKDIR="plain-pip"
+WORKDIR="aip-pip"
 if [ -d "${WORKDIR}" ]; then
-    cookiecutter ../templates -f --no-input slug=${WORKDIR} article=plain supp=plain cover=plain
+    cookiecutter ../templates -f --no-input slug=${WORKDIR} article=aip supp=plain cover=plain
     cd ${WORKDIR}
 else
-    cookiecutter ../templates --no-input slug=${WORKDIR} article=plain supp=plain cover=plain
+    cookiecutter ../templates --no-input slug=${WORKDIR} article=aip supp=plain cover=plain
     cd ${WORKDIR}
     ./setup-env-pip.sh
 fi

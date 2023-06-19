@@ -1,17 +1,20 @@
-% Preamble
-\documentclass[journal=jctcce,manuscript=article,layout=traditional]{achemso}
+\documentclass[aip,preprint]{revtex4-1}
 
 % Make PDFLaTeX builds reproducible
 \pdfinfoomitdate=1
 \pdfsuppressptexinfo=-1
 \pdftrailerid{}
-\pdfinfo{/Producer()/Creator()}
 
-% Packages
-\usepackage[T1]{fontenc} % Use modern font encodings
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{lineno}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\usepackage{mathptmx}
+\usepackage{etoolbox}
 
 % \warninput command: like \input but prints a warning
 % when a file is missing and lets latex carry on.
@@ -26,29 +29,43 @@
 }
 \makeatother
 
-% Configuration
-\SectionNumbersOn
+%% Apr 2021: AIP requests that the corresponding
+%% email to be moved after the affiliations
+\makeatletter
+\def\@email#1#2{%
+ \endgroup
+ \patchcmd{\titleblock@produce}
+  {\frontmatter@RRAPformat}
+  {\frontmatter@RRAPformat{\produce@RRAP{*#1\href{mailto:#2}{#2}}}\frontmatter@RRAPformat}
+  {}{}
+}%
+\makeatother
 
-% Metadata
-\title{Great Title}
+% Settings for hyperref, including reproducibility fix
+\hypersetup{allcolors=black,colorlinks=true,linktoc=none,pdfcreator={},pdfproducer={}}
 
-\author{ADD AUTHORS LATE}
-\affiliation[Ghent University]{Center for Molecular Modeling (CMM), Ghent University, Technologiepark-Zwijnaarde 46, B-9052, Ghent, Belgium}
-\alsoaffiliation{OPTIONAL}
-\email{foo@bar.com}
 
-\keywords{TODO}
-
-% Document
 \begin{document}
+    % Title info
+    \title[Short Ttile]{Long version of your great title}
+
+    \author{A. Lastname}
+    \altaffiliation{A second affiliation for the first author}
+
+    \author{B. Lastname}
+    \email{B.Lastname@email.com}
+    \affiliation{First two authors' institution and/or address}
+
+    \author{C. Author}
+    \affiliation{Last authors' institution and/or address}
+
+    \date{\today}
 
     \begin{abstract}
-         The abstract comes here.
+        The abstract comes here.
     \end{abstract}
 
-    \begin{tocentry}
-        TOC Graphic
-    \end{tocentry}
+    \maketitle
 
     \newpage
     \linenumbers
@@ -158,19 +175,18 @@
 
     XYZ did foo.
 
-    \begin{acknowledgement}
+    \begin{acknowledgments}
     The authors thank the Flemish Supercomputing Centre (VSC),
     funded by Ghent University,
     FWO and the Flemish Government for use of their computational resources.
-
     Add more.
-    \end{acknowledgement}
+    \end{acknowledgments}
 
-    \begin{suppinfo}
-    % Anything that does not fit in the PDF goes into a dataset and must be uploaded to a data repository.
-    The Supplementary Information is a PDF document with \ldots
-    \end{suppinfo}
+    \section*{Data Availability Statement}
+    \label{sec:datastatement}
+
+    \section*{Supporting Information}
+    \label{sec:suppinfo}
 
     \bibliography{references}
-
 \end{document}

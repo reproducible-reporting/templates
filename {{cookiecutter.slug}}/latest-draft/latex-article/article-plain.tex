@@ -5,12 +5,16 @@
 \pdfsuppressptexinfo=-1
 \pdftrailerid{}
 
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} % Use modern font encodings
 \usepackage{mathtools}
-\usepackage{lineno}
+\usepackage{graphicx}
+\usepackage[mathlines]{lineno}
 \usepackage[a4paper,left=2.5cm,right=2cm,top=3.5cm,bottom=3cm,headsep=16pt,headheight=16pt]{geometry}
 \usepackage{xcolor}
 \usepackage{hyperref}
+
+\usepackage{natbib}
 
 % \warninput command: like \input but prints a warning
 % when a file is missing and lets latex carry on.
@@ -72,7 +76,7 @@
     Example citation.\cite{knuth:1984}
 
     \begin{figure}
-        % Contrary to the popular recommendatios,
+        % Contrary to the popular recommendations,
         % I recommend to specify the extension.
         \begin{center}
             \includegraphics{smile.pdf}
@@ -82,7 +86,7 @@
     \end{figure}
 
     \begin{figure}
-        % Contrary to the popular recommendatios,
+        % Contrary to the popular recommendations,
         % I recommend to specify the extension.
         \begin{center}
             \includegraphics{plot-example.pdf}
