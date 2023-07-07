@@ -19,7 +19,9 @@
 */latex-*/*.synctex*
 !*/latex-*/*-old.*
 */uploads/*.zip
-acs-*.bib
+*/latex-*/acs-*.bib
+*/latex-*/*Notes.bib
+*/latex-*/*.sha256
 
 # Software environment
 env
