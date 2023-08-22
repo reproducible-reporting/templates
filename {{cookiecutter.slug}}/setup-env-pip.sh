@@ -22,7 +22,7 @@ setenv TEXMFHOME "${VIRTUAL_ENV}/../texmf"
 EOL
 
 cat >> env/bin/activate.fish << 'EOL'
-set -gx SOURCE_DATE_EPOCH 0
+set -gx SOURCE_DATE_EPOCH 315532800
 set -gx TEXMFHOME "${VIRTUAL_ENV}/../texmf"
 EOL
 
