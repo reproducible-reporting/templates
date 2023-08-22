@@ -19,6 +19,7 @@
 */latex-*/*.synctex*
 !*/latex-*/*-old.*
 */uploads/*.zip
+*/uploads/*.pdf
 */latex-*/acs-*.bib
 */latex-*/*Notes.bib
 */latex-*/*.sha256
