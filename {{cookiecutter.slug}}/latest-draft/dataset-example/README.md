@@ -7,7 +7,7 @@
 
 (Write out the information in the following sections in detail.)
 
-### How the data was created
+### How the data were generated
 
 Give step-by-step instruction explaining how you obtained the data.
 This section must be reproducible.
