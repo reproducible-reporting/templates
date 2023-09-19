@@ -25,7 +25,7 @@
 */latex-*/*.sha256
 
 # Software environment
-env
+venv
 
 # Ninja and RepRepBuild
 .ninja_log

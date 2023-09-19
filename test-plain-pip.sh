@@ -10,9 +10,9 @@ if [ -d "${WORKDIR}" ]; then
 else
     cookiecutter ../templates --no-input slug=${WORKDIR} article=plain supp=plain cover=plain
     cd ${WORKDIR}
-    ./setup-env-pip.sh
+    ./setup-venv-pip.sh
 fi
-source env/bin/activate
+source .envrc
 pip install -e ../../bibsane
 pip install -e ../../reprepbuild
 cd latest-draft

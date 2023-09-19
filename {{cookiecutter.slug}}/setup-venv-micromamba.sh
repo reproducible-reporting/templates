@@ -29,41 +29,23 @@ if [[ "$OS" == "Darwin" ]]; then
 fi
 
 # Install locally
-mkdir -p env/bin
-curl -Ls https://micro.mamba.pm/api/micromamba/$PLATFORM-$ARCH/latest | tar -xj -C env/bin/ --strip-components=1 bin/micromamba
+mkdir -p venv/bin
+curl -Ls https://micro.mamba.pm/api/micromamba/$PLATFORM-$ARCH/latest | tar -xj -C venv/bin/ --strip-components=1 bin/micromamba
 
 # Write scripts to activate and deactivate properly
-cat > env/bin/activate << 'EOL'
+cat > venv/bin/activate << 'EOL'
 export MAMBA_ROOT_PREFIX=$(dirname $(dirname $BASH_SOURCE))
 eval "$(${MAMBA_ROOT_PREFIX}/bin/micromamba shell hook -s posix)"
 micromamba activate
 hash -r
 EOL
 
-mkdir -p env/etc/conda/activate.d
-cat > env/etc/conda/activate.d/reprep.sh << 'EOL'
-export SOURCE_DATE_EPOCH_CONDA_BACKUP="${SOURCE_DATE_EPOCH:-}"
-export SOURCE_DATE_EPOCH=315532800
-export TEXMFHOME_CONDA_BACKUP=${TEXMFHOME:-}
-export TEXMFHOME="${CONDA_PREFIX}/../texmf"
-EOL
-
-mkdir -p env/etc/conda/deactivate.d
-cat > env/etc/conda/deactivate.d/reprep.sh << 'EOL'
-export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH_CONDA_BACKUP:-}"
-unset SOURCE_DATE_EPOCH_CONDA_BACKUP
-if [ -z $SOURCE_DATE_EPOCH ]; then unset SOURCE_DATE_EPOCH; fi
-export TEXMFHOME="${TEXMFHOME_CONDA_BACKUP:-}"
-unset TEXMFHOME_CONDA_BACKUP
-if [ -z $TEXMFHOME ]; then unset TEXMFHOME; fi
-EOL
-
-# Write a condarc file in the env
-cat > env/.condarc << 'EOL'
+# Write a condarc file in the venv
+cat > venv/.condarc << 'EOL'
 channels:
 - conda-forge
 EOL
 
 # Activate and install
-source env/bin/activate
+source .envrc
 micromamba install -y --file environment.yaml

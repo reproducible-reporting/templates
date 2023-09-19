@@ -10,9 +10,9 @@ if [ -d "${WORKDIR}" ]; then
 else
     cookiecutter ../templates --no-input slug=${WORKDIR} article=acs supp=acs cover=ugent env=micromamba
     cd ${WORKDIR}
-    ./setup-env-micromamba.sh
+    ./setup-venv-micromamba.sh
 fi
-source env/bin/activate
+source .envrc
 pip install -e ../../bibsane
 pip install -e ../../reprepbuild
 cd latest-draft

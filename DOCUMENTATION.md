@@ -104,7 +104,7 @@ You either take route **1a + 2** or route **1b + 2**.
 - Before making a first commit, define the software requirements,
   e.g. for post-processing and plotting, in `requirements.txt` **AND** `environment.yaml`.
   If you must use micromamba (e.g. non-Python dependencies), then you can remove `requirements.txt`
-  and `setup-env-pip.sh`.
+  and `setup-venv-pip.sh`.
 
 - Now you can add all the files, commit them, define a remote URL and push the initial contents online:
 
@@ -136,17 +136,22 @@ where `'slug'` should be replaced with the directory created by `git clone`
 (It is assumed your current working directory is the `'slug'`
 defined in the previous section **1a** or **1b**.)
 
-- Install the software environment, using either **one of the following two** commands (not both):
+- Install the software environment, using either **one of the following two** commands (**NOT BOTH**):
 
   ```bash
-  ./setup-env-pip.sh
-  ./setup-env-micromamba.sh
+  ./setup-venv-pip.sh
+  ```
+
+  or
+
+  ```bash
+  ./setup-venv-micromamba.sh
   ```
 
 - Activate your software environment:
 
   ```bash
-  source env/bin/activate
+  source .envrc
   ```
 
   This activation is needed whenever you open a new terminal.
@@ -155,7 +160,8 @@ defined in the previous section **1a** or **1b**.)
   give [`direnv`](https://github.com/direnv/direnv) a try.
   Once `direnv` is installed and configured in your shell profile,
   you only need to allow it once with `direnv allow .`,
-  and the `activate` script is automatically loaded when you change to the source directory.
+  and the `.envrc` script is automatically sourced
+  when you change to the directory of the Git repository.
 
 - Install `pre-commit` and `git-lfs` into the new repository:
 
