@@ -1,0 +1,31 @@
+imports:
+- reprepbuild.builtin
+variables:
+  ignore_missing: dataset-**
+tasks:
+- command: _python_script
+  inp: results-${*name}/${*script}.py
+- command: _convert_svg_pdf
+  inp: latex-${*name}/${*fig}.svg
+- command: latex_flat
+  inp: latex-article/article-structured.tex
+  out: latex-article/article.tex
+- command: latex
+  inp: latex-${*name}/${*name}.tex
+- command: repro_latex_zip
+  loop:
+    - key: name
+      val: article supp
+  inp: latex-${name}/${name}.fls
+  out: uploads/${name}.zip
+- command: copy
+  inp: latex-${*name}/${*name}.pdf
+  out: uploads/
+- command: latex_diff
+  inp: latex-article/article.tex latex-article/old/article.tex
+- command: copy
+  inp: latex-article/article-diff.pdf
+  out: uploads/
+- command: repro_zip
+  inp: dataset-${*name}/MANIFEST.sha256
+  out: uploads/dataset-${*name}.zip

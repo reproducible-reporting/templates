@@ -4,8 +4,10 @@
 if [ "{{ cookiecutter.article }}" == "none" ]; then
     rm -r latest-draft/latex-article
 else
-    mv latest-draft/latex-article/article-{{ cookiecutter.article }}.tex latest-draft/latex-article/article.tex
-    rm latest-draft/latex-article/article-*.tex
+    mv latest-draft/latex-article/article-{{ cookiecutter.article }}.tex latest-draft/latex-article/article-structured.tex
+    rm -f latest-draft/latex-article/article-plain.tex
+    rm -f latest-draft/latex-article/article-acs.tex
+    rm -f latest-draft/latex-article/article-aip.tex
 fi
 
 # Select template for the supporting information or supplementary material

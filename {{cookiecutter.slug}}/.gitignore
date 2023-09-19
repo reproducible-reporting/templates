@@ -27,11 +27,14 @@
 # Software environment
 env
 
-# Ninja
+# Ninja and RepRepBuild
 .ninja_log
+.ninja_deps
 build.ninja
 *.dd
 *.d
+.reprepbuild
+*/latex-article/article.tex
 
 # Python
 __pycache__
