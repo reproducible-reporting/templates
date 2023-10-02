@@ -21,16 +21,18 @@ It is assumed that you have installed and configured the following software,
 ideally using your operating system's software installation tool
 (app store, package manager, pip, ...).
 
-- Python >= 3.11
-- Git: https://git-scm.com/
-- Git LFS: https://git-lfs.com/
-- The cookiecutter: https://www.cookiecutter.io/
+- [Python](https://www.python.org/) >= 3.11
+- [Git](https://git-scm.com/)
+- [Git LFS](https://git-lfs.com/)
+- [The cookiecutter](https://www.cookiecutter.io/)
   (Only needed to initialize a new publication.)
-- Inkscape >= 1.2: https://inkscape.org/
+- [Inkscape](https://inkscape.org/) >= 1.2
   (Only needed when the source contains SVG files.
   [It must be executable as `inkscape` on the command-line](https://stackoverflow.com/a/22085247/494584).)
-- TexLive 2022: https://tug.org/texlive/
+- [TexLive](https://tug.org/texlive/) >= 2022
+- [direnv](https://direnv.net/)
 - A Text editor compatible with [editorconfig](https://editorconfig.org/)
+- Optional: [MuPDF](https://mupdf.com/) >= 1.2
 
 A new dedicated
 [pip](https://pip.pypa.io/en/stable/) or [micromamba](https://mamba.readthedocs.io/)
