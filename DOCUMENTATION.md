@@ -33,6 +33,19 @@ ideally using your operating system's software installation tool
 - [direnv](https://direnv.net/)
 - A Text editor compatible with [editorconfig](https://editorconfig.org/)
 - Optional: [MuPDF](https://mupdf.com/) >= 1.2
+- Optional: [Ghostscript](https://www.ghostscript.com/) >= 9.0
+
+Installation instructions for ...
+
+- ... Ubuntu:
+  ```bash
+  sudo apt install python inkscape texlive-full git git-lfs direnv mupdf-tools ghostscript
+  ```
+
+- ... Fedora:
+  ```bash
+  sudo dnf install python inkscape texlive-scheme-full git git-lfs direnv mupdf ghostscript
+  ```
 
 A new dedicated
 [pip](https://pip.pypa.io/en/stable/) or [micromamba](https://mamba.readthedocs.io/)
