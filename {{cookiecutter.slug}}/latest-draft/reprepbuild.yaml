@@ -12,7 +12,7 @@ tasks:
   out: latex-article/article.tex
 - command: latex
   inp: latex-${*name}/${*name}.tex
-- command: repro_latex_zip
+- command: repro_zip_latex
   loop:
     - key: name
       val: article supp
