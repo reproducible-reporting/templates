@@ -1,0 +1,92 @@
+% A Distraction Free LaTeX-Beamer theme.
+% Copyright (C) 2023 Toon Verstraelen
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+% This file is part of beamerthemedistractionfree.
+
+\ProvidesPackage{beamerouterthemedistractionfree}[v0.0.0]
+\RequirePackage{ifthen}
+\RequirePackage{etoolbox}
+\RequirePackage{calc}
+
+\mode<presentation>
+
+\newboolean{showmaxslides}
+\setboolean{showmaxslides}{false}
+
+\DeclareOptionBeamer{showmaxslides}{\setboolean{showmaxslides}{true}}
+\DeclareOptionBeamer{pageprefix}{\def\beamer@distractionfree@pageprefix{#1}}
+\ExecuteOptionsBeamer{pageprefix=}
+\ProcessOptionsBeamer
+
+
+\newlength{\basemargin}
+\setlength{\basemargin}{0.6cm}
+\newlength{\myleftmargin}
+\setlength{\myleftmargin}{\basemargin}
+\newlength{\myrightmargin}
+\setlength{\myrightmargin}{\basemargin}
+\newlength{\mytextlength}
+\setlength{\mytextlength}{\paperwidth - \myleftmargin - \myrightmargin}
+\newlength{\myfooterheight}
+\setlength{\myfooterheight}{\basemargin}
+
+\setbeamersize{text margin left=\myleftmargin, text margin right=\myrightmargin}
+
+% This cannot be an environment because I need to access the height parameter
+% after closing the relevant beamercolorbox
+\newcommand{\basicfooter}[2]{%
+  \leavevmode
+  \begin{beamercolorbox}[sep=0pt, wd=\myleftmargin, ht=#1, dp=1ex]{footline}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[sep=0pt, wd=\mytextlength, ht=#1, dp=1ex]{footline}
+    #2%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[sep=0pt, wd=\myrightmargin, ht=#1, dp=1ex]{footline}
+  \end{beamercolorbox}%
+}
+
+\defbeamertemplate*{frametitle}{distractionfreetitle}{
+  \vskip \basemargin
+  \leavevmode
+  \begin{beamercolorbox}[sep=0ex, wd=\mytextlength, left]{frametitle}
+    \usebeamerfont{frametitle}%
+    \insertframetitle%
+  \end{beamercolorbox}%
+  \vskip 0.2cm
+}%
+
+\defbeamertemplate{footline}{distractionfreefooternologo}{%
+  \basicfooter{%
+    \myfooterheight
+  }{%
+      \vbox to\myfooterheight{%
+      \vfil%
+      % \insertshorttitle{} $~|~$ %
+      % \insertshortauthor{} $\quad$%
+      % \insertshortsubtitle{}%
+      \hfill \beamer@distractionfree@pageprefix\insertframenumber\ifthenelse{%
+        \boolean{showmaxslides}%
+      }{%
+        { / \inserttotalframenumber}%
+      }{}%
+      \par\vfil\vfil
+    }
+  }
+}
+
+\setbeamertemplate{footline}[distractionfreefooternologo]
+
+\mode<all>

@@ -1,0 +1,144 @@
+% A Distraction Free LaTeX-Beamer theme.
+% Copyright (C) 2023 Toon Verstraelen
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+% This file is part of beamerthemedistractionfree.
+
+\ProvidesPackage{beamerfontthemedistractionfree}[v0.0.0]
+\mode<presentation>
+
+% Math setup
+\RequirePackage{mathtools}
+\RequirePackage[mathrm=sym]{unicode-math}
+\setoperatorfont\symup
+\unimathsetup{bold-style=ISO,math-style=ISO}
+
+% SI Unit X setup
+\RequirePackage{siunitx}[=v2]
+\DeclareSIUnit\gauss{G}  % gauss = 1e-4 tesla
+\DeclareSIUnit\molar{M}  % molar = mol / liter
+\DeclareSIUnit\calorie{cal}  % calorie
+\sisetup{
+    mode=math,
+    output-decimal-marker={,},
+    group-digits=false,
+}
+
+%
+% Nice math fonts
+%
+
+\RequirePackage{FiraSans}
+\RequirePackage{FiraMono}
+\setmainfont{Fira Sans}
+\setmathfont[Scale=1.1]{Fira Math}
+
+%\setmainfont{TeX Gyre Pagella}
+%\setmathfont{TeX Gyre Pagella Math}
+
+%\setmainfont[Ligatures={Common,Rare,TeX}]{TeX Gyre Pagella}
+%\setmathfont[Scale=MatchUppercase]{Asana Math}
+
+
+%
+% Not so nice math fonts
+%
+
+% Nice for presentations, spacing is sometimes off, font size issues
+%\setmainfont{GFS Neohellenic}
+%\setmathfont[Scale=2.0]{GFS Neohellenic Math}
+
+% Wrong spacing subscripts
+%\setmainfont{TeX Gyre Bonum}
+%\setmathfont{TeX Gyre Bonum Math}
+
+% Wrong spacing subscripts
+%\setmainfont{DejaVu Serif}
+%\setmathfont{TeX Gyre DejaVu Math}
+
+% Wrong spacing subscripts
+%\setmainfont{DejaVu Serif}
+%\setmathfont[Scale=MatchLowercase]{DejaVu Math TeX Gyre}
+
+% Times-new-roman-like
+%\setmainfont{XITS}
+%\setmathfont{XITS Math}
+
+% A little too bold, especially comma
+%\setmainfont{TeX Gyre Schola}
+%\setmathfont[Scale=1.5]{TeX Gyre Schola Math}
+
+
+
+%
+% Not working yet
+%
+
+%\setmainfont{Noto Sans}
+%\setmathfont{Noto Sans Math}
+
+
+% Math notation
+\newcommand*{\bvec}[1]{\vec{\symbfup{#1}}}
+\newcommand*{\nvec}[1]{\hat{\symbfup{#1}}}
+\renewcommand{\d}[1]{\ensuremath{\operatorname{d}\mkern-3mu{#1}}}
+
+% Additional commands often found in equations
+\newcommand{\ihat}{\nvec{\textbf{\i}}}
+\newcommand{\jhat}{\nvec{\textbf{\j}}}
+\newcommand{\khat}{\nvec{k}}
+\newcommand{\grad}{\vec{\nabla}}
+\newcommand{\emf}{\mathcal{E}}
+
+
+% Font sizes
+\renewcommand\footnotesize{\fontsize{8pt}{10pt}\selectfont}
+\renewcommand\small{\fontsize{10pt}{12pt}\selectfont}
+\renewcommand\normalsize{\fontsize{12pt}{14pt}\selectfont}
+\renewcommand\large{\fontsize{14pt}{16pt}\selectfont}
+\renewcommand\Large{\fontsize{16pt}{18pt}\selectfont}
+
+\usefonttheme{serif}
+
+%\setbeamerfont{normal text}{family=\sffamily, size=\normalsize, series=\mdseries}
+\setbeamerfont{normal text}{family=\rmfamily, size=\normalsize, series=\mdseries}
+\setbeamerfont{alerted text}{parent=normal text}
+
+\setbeamerfont{structure}{parent=normal text}
+
+\setbeamerfont{all titles}{parent=normal text}
+\setbeamerfont{presentation title}{parent=all titles, size=\large, shape=\scshape}
+\setbeamerfont{subtitle}{parent=all titles, shape=\upshape}
+\setbeamerfont{frametitle}{parent=all titles, size=\Large}
+
+\setbeamerfont{footline}{parent=structure,size=\footnotesize}
+\setbeamerfont{title in head/foot}{parent=footline, series=\bfseries}
+\setbeamerfont{author in head/foot}{parent=footline}
+
+\setbeamerfont{section in toc}{parent=normal text}
+\setbeamerfont{subsection in toc}{parent=section in toc}
+\setbeamerfont{subsubsection in toc}{parent=subsection in toc}
+
+\setbeamerfont{author}{parent=normal text, size=\small}
+\setbeamerfont{institute}{parent=normal text, size=\small}
+
+\setbeamerfont{caption}{parent=normal text, size=\small}
+\setbeamerfont{caption name}{series=normal text, size=\small}
+
+\setbeamerfont{itemize/enumerate body}{parent=normal text}
+\setbeamerfont{itemize/enumerate subbody}{parent=itemize/enumerate body}
+\setbeamerfont{itemize/enumerate subsubbody}{parent=itemize/enumerate subbody}
+
+\mode<all>

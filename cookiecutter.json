@@ -18,6 +18,7 @@
   ],
   "_copy_without_render": [
     "*.tex",
+    "*.sty",
     "*.cls"
   ]
 }

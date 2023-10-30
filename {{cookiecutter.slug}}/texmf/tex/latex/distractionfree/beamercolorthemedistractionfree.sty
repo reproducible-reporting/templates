@@ -1,0 +1,64 @@
+% A Distraction Free LaTeX-Beamer theme.
+% Copyright (C) 2023 Toon Verstraelen
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+% This file is part of beamerthemedistractionfree.
+
+\ProvidesPackage{beamercolorthemedistractionfree}[v0.0.0]
+\RequirePackage{ifthen}
+\mode<presentation>
+
+\definecolor{distractionfree@text@black}{RGB}{0,0,0}
+\definecolor{distractionfree@text@gray}{RGB}{120,120,120}
+\definecolor{distractionfree@text@whiter_gray}{RGB}{200,200,200}
+\definecolor{distractionfree@text@darker_gray}{RGB}{90,90,90}
+\definecolor{distractionfree@text@white}{RGB}{255, 255, 255}
+
+\newcommand{\beamertitlecolor}{distractionfree@text@darker_gray}
+
+\newcommand{\beamertextcolor}{distractionfree@text@black}%
+\newcommand{\beamerbgcolor}{distractionfree@text@white}%
+\newcommand{\beamerfootertextcolor}{distractionfree@text@gray}%
+
+\setbeamercolor*{normal text}{fg=\beamertextcolor, bg=\beamerbgcolor}
+\setbeamercolor*{alerted text}{fg=\beamertitlecolor, bg=\beamerbgcolor}
+\setbeamercolor*{footline}{fg=\beamerfootertextcolor, bg=\beamerbgcolor}
+\setbeamercolor*{frametitle}{fg=\beamertitlecolor, bg=\beamerbgcolor}
+
+\setbeamercolor*{author}{parent=normal text}
+\setbeamercolor*{title}{parent=frametitle}
+\setbeamercolor*{part title}{parent=frametitle}
+
+\setbeamercolor*{section in toc}{parent=normal text}
+\setbeamercolor*{subsection in toc}{parent=normal text}
+\setbeamercolor*{subsubsection in toc}{parent=normal text}
+
+\setbeamercolor*{enumerate item}{parent=normal text}
+\setbeamercolor*{enumerate subitem}{parent=normal text}
+\setbeamercolor*{enumerate subsubitem}{parent=normal text}
+
+\setbeamercolor*{itemize item}{parent=normal text}
+\setbeamercolor*{itemize subitem}{parent=normal text}
+\setbeamercolor*{itemize subsubitem}{parent=normal text}
+
+\setbeamercolor*{bibliography item}{parent=normal text}
+\setbeamercolor*{bibliography entry title}{parent=normal text}
+\setbeamercolor*{bibliography entry author}{parent=normal text}
+\setbeamercolor*{bibliography entry location}{parent=normal text}
+\setbeamercolor*{bibliography entry note}{parent=normal text}
+
+\setbeamercolor*{caption name}{parent=normal text}
+
+\mode<all>

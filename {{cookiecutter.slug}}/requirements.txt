@@ -3,5 +3,5 @@ pre-commit
 numpy
 matplotlib
 pytest
-reprepbuild
+reprepbuild>=1.5.0
 bibsane

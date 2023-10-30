@@ -1,0 +1,122 @@
+% A Distraction Free LaTeX-Beamer theme.
+% Copyright (C) 2023 Toon Verstraelen
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+% This file is part of beamerthemedistractionfree.
+
+\ProvidesPackage{beamerinnerthemedistractionfree}[v0.0.0]
+
+\mode<presentation>
+
+\def\itemsymbol{\raisebox{0.3ex}{\small$\bullet$}}
+% Save the \item macro to \svitem
+\let\svitem\item
+\makeatletter
+\newenvironment<>{vfilleditems}{%
+  \begin{itemize}[#1]%
+  \let\olditem\item
+  \renewcommand\item[1][\itemsymbol]{
+    \ifnum\@itemdepth=1\relax
+      \vfill
+    \else
+      \ifnum\@itemdepth=2\relax
+        \setlength\itemsep{0.5ex}
+      \else
+        \ifnum\@itemdepth=3\relax
+          \setlength\itemsep{0.25ex}
+    \fi\fi\fi
+    \svitem[##1]
+  }
+}{
+  \end{itemize}\vfill
+}
+\makeatother
+
+
+\defbeamertemplate*{section in toc}{distractionfree}{%
+  \hspace{0.5em} \inserttocsectionnumber.~\inserttocsection
+}
+
+\defbeamertemplate*{subsection in toc}{distractionfree}{%
+  \hspace{1.5em} \inserttocsectionnumber.\inserttocsubsectionnumber~\inserttocsubsection\par
+}
+
+\defbeamertemplate*{subsubsection in toc}{distractionfree}{% No one should use subsubsections in a presentation
+}
+
+\defbeamertemplate*{itemize item}{distractionfree}{%
+  \usebeamerfont*{itemize item}\itemsymbol
+}
+
+\defbeamertemplate*{itemize subitem}{distractionfree}{%
+  \usebeamerfont*{itemize subitem}\itemsymbol
+}
+
+\defbeamertemplate*{itemize subsubitem}{distractionfree}{%
+  \usebeamerfont*{itemize subsubitem}\itemsymbol
+}
+
+\setlength{\abovecaptionskip}{0ex}
+\setlength{\belowcaptionskip}{1ex}
+
+\setbeamertemplate{caption}{%
+  \insertcaption%
+}
+
+\defbeamertemplate*{title page}{distractionfree}[1][]
+{
+  \usebeamerfont{title}
+  \begin{beamercolorbox}[sep=0ex,wd=\textwidth,dp=1ex]{headline}
+    \vskip 75pt
+    \parbox{\linewidth}{%
+      \begin{beamercolorbox}[wd=\textwidth]{title}%
+        {\inserttitle}%
+      \end{beamercolorbox}
+
+      \begin{beamercolorbox}[wd=\textwidth,dp=1ex]{author}%
+        \vskip 3pt
+        \ifx\insertsubtitle\@empty%
+          \else%
+          {\usebeamerfont{subtitle}\insertsubtitle}\vskip 2pt%
+        \fi%
+        \usebeamerfont{author}\usebeamercolor{author}\insertauthor $\quad$
+        \ifx\insertinstitute\@empty%
+          \else%
+          {\usebeamerfont{institute}\insertinstitute $\quad$}%
+        \fi%
+        \ifx\insertdate\@empty%
+          \else%
+          {\usebeamerfont{date}\insertdate}%
+        \fi%
+      \end{beamercolorbox}%
+    }%
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{section page}
+{
+    \begin{centering}
+        {\usebeamerfont{section name}\usebeamercolor[fg]{section name}\insertsectionnumber}
+        \vskip1em\par
+        \begin{beamercolorbox}[sep=4pt,center]{part title}
+            \usebeamerfont{section title}\insertsection\par
+        \end{beamercolorbox}
+    \end{centering}
+}
+\def\sectionpage{\usebeamertemplate*{section page}}
+
+\AtBeginSection{\frame{\sectionpage}}
+
+\mode<all>

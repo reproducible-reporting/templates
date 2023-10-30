@@ -1,0 +1,103 @@
+\documentclass[aspectratio=169]{beamer}
+% The page prefix can be used to put unique labels
+% on each slide of a set of presentations.
+\usetheme[pageprefix=demo\_]{distractionfree}
+
+\definecolor{tab.blue}{HTML}{1f77b4}
+\definecolor{tab.orange}{HTML}{ff7f0e}
+\definecolor{tab.green}{HTML}{2ca02c}
+\definecolor{tab.red}{HTML}{d62728}
+\definecolor{tab.purple}{HTML}{9467bd}
+\definecolor{tab.brown}{HTML}{8c564b}
+\definecolor{tab.pink}{HTML}{e377c2}
+\definecolor{tab.gray}{HTML}{7f7f7f}
+\definecolor{tab.olive}{HTML}{bcbd22}
+\definecolor{tab.cyan}{HTML}{17becf}
+
+% This makes it possible to add backup slides, without counting them.
+\usepackage{appendixnumberbeamer}
+\renewcommand{\appendixname}{\texorpdfstring{\translate{appendix}}{appendix}}
+
+\usepackage{hyperref}
+\hypersetup{hidelinks=true,allcolors=uni.blue,linktoc=none}
+
+%
+% Title slide information
+%
+
+\title[Short title]{A more elaborate and informative version of the title}
+\author{\underline{Presenting Autor}, Other authors \\
+\texttt{\scriptsize first.last@email.com} \\}
+\subtitle[Subtitle]{Optional subtitle}
+\institute{%
+Venue \\[0em]
+Your institute\\[0em]
+Logos \\[0em]
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% For an actual presentations, you may want to use input commands
+% to organize the slides over multiple files.
+
+% Example of a fullscreen image.
+% This type of slide can be used to focus the audience
+% on some question, topic or on the presenter.
+% Image adapted from https://www.pexels.com/photo/domesticated-horses-grazing-in-pasture-on-farmland-5838235/
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{pexels-mathias-reding-5838235.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
+
+% A slide without title, again useful if you want to emphasize something
+\begin{frame}[plain]
+    \centering
+    \begin{minipage}{9cm}
+        \begin{center}
+            \it\centering\large
+            Education is not the learning of facts, \\
+            but the training of the mind to think.
+        \end{center}
+        \flushright --- Albert Einstein, 1921 \qquad
+    \end{minipage}
+\end{frame}
+
+\section{Section to organize slides in a long presentation}
+
+% Ordinary slide with title.
+% Slide titles can be used to organize, e.g. clarify that some slides belong together
+% under some topic, but usually they are just a nuisance.
+\begin{frame}{Do you really want a title on your slide?}
+    Think about it:
+    \begin{vfilleditems}
+        \item
+        More stuff to read will usually not always help the audience.
+        \item
+        You want the audience to listen, not to read.
+        \item
+        You definitely do not want the presenter to read.
+    \end{vfilleditems}
+    You have to admit: this slide has too much text for a presentation.
+\end{frame}
+
+% Occasionally, it is useful to have backup slides,
+% e.g. to support answers to questions after the presentation.
+% The appendix below shows how this can be done
+% without increasing the total number of slides.
+
+\appendix
+\begin{frame}[plain]
+\end{frame}
+% TODO: make \section* work
+\section{Backup slides}
+
+\begin{frame}{Some more details}
+    Details here
+\end{frame}
+
+
+\end{document}
