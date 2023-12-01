@@ -16,7 +16,7 @@ tasks:
     latex: xelatex
 - command: latex
   inp: latex-${*name}/${*name}.tex
-- command: repro_zip_latex
+- command: zip_latex
   loop:
     - key: name
       val: article supp
@@ -30,6 +30,6 @@ tasks:
 - command: copy
   inp: latex-article/article-diff.pdf
   out: uploads/
-- command: repro_zip
+- command: zip_manifest
   inp: dataset-${*name}/MANIFEST.sha256
   out: uploads/dataset-${*name}.zip
