@@ -8,6 +8,13 @@ ${PYTHON3} -c 'import sys; assert sys.version_info.major == 3; assert sys.versio
 echo "Create the venv"
 ${PYTHON3} -m venv venv
 
+# Create an .envrc for direnv.
+cat > .envrc << 'EOL'
+export SOURCE_DATE_EPOCH=315532800
+export TEXMFHOME="${PWD}/texmf"
+source ${PWD}/venv/bin/activate
+EOL
+
 # Activate
 source .envrc
 ${PYTHON3} -m pip install -U pip

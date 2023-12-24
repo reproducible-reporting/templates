@@ -26,6 +26,7 @@
 
 # Software environment
 venv
+.envrc
 
 # Ninja and RepRepBuild
 .ninja_log

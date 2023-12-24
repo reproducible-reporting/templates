@@ -46,6 +46,14 @@ channels:
 - conda-forge
 EOL
 
+# Create an .envrc for direnv.
+cat > .envrc << 'EOL'
+export SOURCE_DATE_EPOCH=315532800
+export TEXMFHOME="${PWD}/texmf"
+source ${PWD}/venv/bin/activate
+EOL
+
+
 # Activate and install
 source .envrc
 micromamba install -y --file environment.yaml
