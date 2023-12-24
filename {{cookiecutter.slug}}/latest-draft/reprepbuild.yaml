@@ -14,8 +14,14 @@ tasks:
   inp: latex-presentation/presentation.tex
   override:
     latex: xelatex
+- command: latex_bibtex
+  inp: latex-article/article.tex
 - command: latex
-  inp: latex-${*name}/${*name}.tex
+  inp: latex-cover/cover.tex
+- command: latex
+  inp: latex-reply/reply.tex
+- command: latex
+  inp: latex-supp/supp.tex
 - command: zip_latex
   loop:
     - key: name

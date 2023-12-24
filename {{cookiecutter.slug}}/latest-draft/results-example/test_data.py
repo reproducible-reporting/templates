@@ -3,6 +3,7 @@
 
 import numpy as np
 import pytest
+from reprepbuild import script_driver
 
 FILENAMES = ["../dataset-example/example.txt", "data_00.txt", "data_01.txt"]
 
@@ -31,4 +32,4 @@ def main(inputs):
 
 
 if __name__ == "__main__":
-    main(**reprepbuild_info())
+    script_driver(__file__)

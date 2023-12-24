@@ -2,6 +2,7 @@
 """Example data generation script."""
 
 import numpy as np
+from reprepbuild import script_driver
 
 REPREPBUILD_CASE_FMT = "data_{:02d}"
 
@@ -34,5 +35,4 @@ def main(shift, outputs):
 
 
 if __name__ == "__main__":
-    for build_case in reprepbuild_cases():
-        main(**reprepbuild_info(*build_case))
+    script_driver(__file__)

@@ -20,6 +20,7 @@ Some suggestions:
 """
 
 import numpy as np
+from reprepbuild import script_driver
 
 
 def reprepbuild_info():
@@ -51,4 +52,4 @@ def main(inputs, outputs):
 
 
 if __name__ == "__main__":
-    main(**reprepbuild_info())
+    script_driver(__file__)
