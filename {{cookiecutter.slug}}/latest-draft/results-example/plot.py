@@ -4,9 +4,7 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-
-# Load our matplotlibrc config. (Not done automagically to keep things clear.)
-matplotlib.rc_file("../matplotlibrc")
+from reprepbuild import script_driver
 
 
 def reprepbuild_info():
@@ -18,12 +16,18 @@ def reprepbuild_info():
     they are lists of filenames used for dependency tracking.
     """
     return {
-        "inputs": ["../dataset-example/example.txt", "data_00.txt", "data_01.txt"],
+        "inputs": [
+            "../matplotlibrc",
+            "../dataset-example/example.txt",
+            "data_00.txt",
+            "data_01.txt",
+        ],
         "outputs": ["../latex-article/plot-example.pdf"],
     }
 
 
 def main(inputs, outputs):
+    matplotlib.rc_file(inputs.pop(0))
     fig, ax = plt.subplots()
     for fn_in in inputs:
         data = np.loadtxt(fn_in)
@@ -35,4 +39,4 @@ def main(inputs, outputs):
 
 
 if __name__ == "__main__":
-    main(**reprepbuild_info())
+    script_driver(__file__)

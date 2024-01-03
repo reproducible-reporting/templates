@@ -14,14 +14,8 @@ tasks:
   inp: latex-presentation/presentation.tex
   override:
     latex: xelatex
-- command: latex_bibtex
-  inp: latex-article/article.tex
 - command: latex
-  inp: latex-cover/cover.tex
-- command: latex
-  inp: latex-reply/reply.tex
-- command: latex
-  inp: latex-supp/supp.tex
+  inp: latex-${*name}/${*name}.tex
 - command: zip_latex
   loop:
     - key: name
@@ -33,6 +27,10 @@ tasks:
   out: uploads/
 - command: latex_diff
   inp: latex-article/article.tex latex-article/old/article.tex
+- command: latex
+  inp: latex-article/article-diff.tex
+  arg:
+    skip_bibtex: true
 - command: copy
   inp: latex-article/article-diff.pdf
   out: uploads/

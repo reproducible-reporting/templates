@@ -426,6 +426,7 @@ Should:
   when finalizing the manuscript.
 - Define as little commands as possible.
 - Avoid low-quality publisher article classes. (ACS has a decent one.)
+- Avoid `\subfigure`. Merge panels into one PDF instead. (See `reprepbuild.helpers`.)
 
 
 ### Figures

@@ -15,19 +15,6 @@
 \usepackage{hyperref}
 \usepackage{natbib}
 
-% \warninput command: like \input but prints a warning
-% when a file is missing and lets latex carry on.
-\makeatletter
-\newcommand{\warninput}[1]{%
-  \filename@parse{#1}%
-  \InputIfFileExists{#1}{}{%
-    \message{LaTeX Warning: File `%
-    \filename@base.\ifx\filename@ext\relax tex\else\filename@ext\fi'%
-    not found on input line \the\inputlineno}%
-  }%
-}
-\makeatother
-
 % Tableu 10 colors, for consistency with matplotlib,
 % and figures in inkscape.
 \definecolor{tab.blue}{HTML}{1f77b4}
