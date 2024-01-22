@@ -1,7 +1,5 @@
 imports:
 - reprepbuild.builtin
-variables:
-  ignore_missing: dataset-**
 tasks:
 - command: _python_script
   inp: results-${*name}/${*script}.py
