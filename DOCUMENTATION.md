@@ -42,9 +42,30 @@ Installation instructions for ...
   sudo apt install python3 python3.11 python3.11-venv inkscape texlive-full git git-lfs direnv mupdf-tools ghostscript libreoffice python3-pip
   ```
 
+  Fira fonts (used for presentations) must be installed manually:
+
+  ```bash
+  mkdir -p ~/.local/share/fonts
+  cd ~/.local/share/fonts
+  wget 'https://github.com/firamath/firamath/releases/download/v0.3.4/firamath.tds.zip'
+  unzip -j firamath.tds.zip fonts/opentype/public/firamath/FiraMath-Regular.otf
+  rm firamath.tds.zip
+  cd
+  ```
+
+  ```bash
+  mkdir -p ~/.local/share/fonts
+  cd ~/.local/share/fonts
+  wget 'https://github.com/mozilla/Fira/archive/refs/tags/4.202.zip'
+  unzip -j 4.202.zip Fira-4.202/otf/*.otf
+  chmod -x *.otf
+  rm 4.202.zip
+  cd
+  ```
+
 - ... Fedora:
   ```bash
-  sudo dnf install python python3-pip python3-virtualenv inkscape texlive-scheme-full git git-lfs direnv mupdf ghostscript
+  sudo dnf install python python3-pip python3-virtualenv inkscape texlive-scheme-full git git-lfs direnv mupdf ghostscript mozilla-fira* texlive-fira*
   ```
 
 A new dedicated
