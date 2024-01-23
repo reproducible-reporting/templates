@@ -51,6 +51,7 @@ cat > .envrc << 'EOL'
 export SOURCE_DATE_EPOCH=315532800
 export TEXMFHOME="${PWD}/texmf"
 source ${PWD}/venv/bin/activate
+unset PS1
 EOL
 
 

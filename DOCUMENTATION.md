@@ -37,14 +37,14 @@ ideally using your operating system's software installation tool
 
 Installation instructions for ...
 
-- ... Ubuntu:
+- ... Ubuntu 22:
   ```bash
-  sudo apt install python inkscape texlive-full git git-lfs direnv mupdf-tools ghostscript
+  sudo apt install python3 python3.11 python3.11-venv inkscape texlive-full git git-lfs direnv mupdf-tools ghostscript libreoffice python3-pip
   ```
 
 - ... Fedora:
   ```bash
-  sudo dnf install python inkscape texlive-scheme-full git git-lfs direnv mupdf ghostscript
+  sudo dnf install python python3-pip python3-virtualenv inkscape texlive-scheme-full git git-lfs direnv mupdf ghostscript
   ```
 
 A new dedicated
@@ -151,15 +151,24 @@ where `'slug'` should be replaced with the directory created by `git clone`
 (It is assumed your current working directory is the `'slug'`
 defined in the previous section **1a** or **1b**.)
 
-- Install the software environment, using either **one of the following two** commands (**NOT BOTH**):
+- Install the software environment, using either **ONE of the following** commands (**NOT ALL**):
 
   ```bash
+  # Fedora
   ./setup-venv-pip.sh
   ```
 
   or
 
   ```bash
+  # Ubuntu 22
+  PYTHON3=/usr/bin/python3.11 ./setup-venv-pip.sh
+  ```
+
+  or
+
+  ```bash
+  # Any
   ./setup-venv-micromamba.sh
   ```
 
