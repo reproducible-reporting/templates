@@ -23,15 +23,16 @@ tasks:
 - command: copy
   inp: latex-${*name}/${*name}.pdf
   out: uploads/
-- command: latex_diff
-  inp: latex-article/article.tex latex-article/old/article.tex
-- command: latex
-  inp: latex-article/article-diff.tex
-  arg:
-    skip_bibtex: true
-- command: copy
-  inp: latex-article/article-diff.pdf
-  out: uploads/
+# The following can be used to generate a diff showing the revisions.
+#- command: latex_diff
+#  inp: latex-article/article.tex latex-article/old/article.tex
+#- command: latex
+#  inp: latex-article/article-diff.tex
+#  arg:
+#    skip_bibtex: true
+#- command: copy
+#  inp: latex-article/article-diff.pdf
+#  out: uploads/
 - command: zip_manifest
   inp: dataset-${*name}/MANIFEST.sha256
   out: uploads/dataset-${*name}.zip
