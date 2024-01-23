@@ -39,7 +39,7 @@ Installation instructions for ...
 
 - ... Ubuntu 22:
   ```bash
-  sudo apt install python3 python3.11 python3.11-venv inkscape texlive-full git git-lfs direnv mupdf-tools ghostscript libreoffice python3-pip
+  sudo apt install python3 python3.11 python3.11-venv  python3-pip python3-cookiecutter inkscape texlive-full git git-lfs direnv mupdf-tools ghostscript libreoffice
   ```
 
   Fira fonts (used for presentations) must be installed manually:
@@ -65,7 +65,7 @@ Installation instructions for ...
 
 - ... Fedora:
   ```bash
-  sudo dnf install python python3-pip python3-virtualenv inkscape texlive-scheme-full git git-lfs direnv mupdf ghostscript mozilla-fira* texlive-fira*
+  sudo dnf install python python3-pip python3-virtualenv python3-cookiecutter inkscape texlive-scheme-full git git-lfs direnv mupdf ghostscript mozilla-fira* texlive-fira*
   ```
 
 A new dedicated
