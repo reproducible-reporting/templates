@@ -108,6 +108,20 @@ It may also work natively on Windows (one day).
 
 You either take route **1a + 2** or route **1b + 2**.
 
+### 0) First-time Git users
+
+If you have not used Git before, you probably have configured it yet.
+At least run the following (with corrected name and email):
+
+```bash
+git config --global init.defaultBranch main
+git config --global user.name "Your Name"
+git config --global user.email Your.Name@email.com
+git config --global core.editor nano
+```
+
+Also, go through a [Git Tutorial](https://www.w3schools.com/git/default.asp?remote=github) to become familiar with the basic concepts.
+
 ### 1) Option a: Start a new publication
 
 - Start a new publication with the [cookiecutter](https://github.com/cookiecutter/cookiecutter):
