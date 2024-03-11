@@ -11,7 +11,7 @@ def reprepbuild_cases():
     """Generator over different ways to run this script.
 
     This is a generator, which yields lists of arguments for reprepbuild_info.
-    These cases will be executed in parrallel by RepRepBuild (ninja).
+    These cases will be executed in parallel by RepRepBuild (ninja).
     """
     yield [0]
     yield [1]
