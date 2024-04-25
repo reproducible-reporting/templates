@@ -42,6 +42,7 @@ build.ninja
 *.dd
 *.d
 .reprepbuild
+.stepup
 */latex-article/article.tex
 
 # Python

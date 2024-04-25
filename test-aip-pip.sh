@@ -13,10 +13,9 @@ else
     ./setup-venv-pip.sh
 fi
 source .envrc
-pip install -e ../../bibsane
-pip install -e ../../reprepbuild
+pip install -U pip -e ../../bibsane -e ../../stepup/stepup-core -e ../../stepup/stepup-reprep
 cd latest-draft
-rr -v -d explain
+stepup -n
 cd ..
 git init
 git add .

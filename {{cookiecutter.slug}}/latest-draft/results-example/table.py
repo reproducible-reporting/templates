@@ -20,12 +20,12 @@ Some suggestions:
 """
 
 import numpy as np
-from reprepbuild import script_driver
+from stepup.core.script import driver
 
 
-def reprepbuild_info():
-    """Give RepRep some info on the inputs and outputs."""
-    return {"inputs": ["data_00.txt"], "outputs": ["../latex-article/table.tex"]}
+def info():
+    """Give Stepup some info on the inputs and outputs."""
+    return {"inp": "data_00.txt", "out": "../latex-article/table.tex"}
 
 
 TABLE_TEMPLATE_HEAD = r"""
@@ -41,10 +41,10 @@ TABLE_TEMPLATE_FOOT = r"""
 """
 
 
-def main(inputs, outputs):
+def run(inp, out):
     """Main data generation program."""
-    data = np.loadtxt(inputs[0])
-    with open(outputs[0], "w") as f:
+    data = np.loadtxt(inp)
+    with open(out, "w") as f:
         f.write(TABLE_TEMPLATE_HEAD)
         for x, y in data[:5]:
             f.write(f"    {x:.2f} & {y:.2f} \\\\\n")
@@ -52,4 +52,4 @@ def main(inputs, outputs):
 
 
 if __name__ == "__main__":
-    script_driver(__file__)
+    driver()

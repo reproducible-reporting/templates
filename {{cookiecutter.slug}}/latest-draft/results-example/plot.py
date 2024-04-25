@@ -4,10 +4,10 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-from reprepbuild import script_driver
+from stepup.core.script import driver
 
 
-def reprepbuild_info():
+def info():
     """Give RepRep some info about inputs and outputs of this script.
 
     The entire dictionary is passed as keyword arguments to main.
@@ -16,27 +16,27 @@ def reprepbuild_info():
     they are lists of filenames used for dependency tracking.
     """
     return {
-        "inputs": [
+        "inp": [
             "../matplotlibrc",
             "../dataset-example/example.txt",
             "data_00.txt",
             "data_01.txt",
         ],
-        "outputs": ["../latex-article/plot-example.pdf"],
+        "out": "../latex-article/plot-example.pdf",
     }
 
 
-def main(inputs, outputs):
-    matplotlib.rc_file(inputs.pop(0))
+def run(inp, out):
+    matplotlib.rc_file(inp.pop(0))
     fig, ax = plt.subplots()
-    for fn_in in inputs:
+    for fn_in in inp:
         data = np.loadtxt(fn_in)
         ax.plot(data[:, 0], data[:, 1])
     ax.set_title("Usually, you don't need an axes title")
     ax.set_xlabel("x [unit for x]")
     ax.set_ylabel("y [unit for y]")
-    fig.savefig(outputs[0])
+    fig.savefig(out)
 
 
 if __name__ == "__main__":
-    script_driver(__file__)
+    driver()
