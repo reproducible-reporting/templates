@@ -13,10 +13,21 @@ the following is suitable:
 > No information from this repository can be made public without the consent of all authors.
 
 
+## How to build the publication from source on your computer
+
+Follow the tutorials in the [StepUp RepRep documentation](https://reproducible-reporting.github.io/stepup-reprep/).
+
+
+### Mandatory steps after cloning this repository locally
+
+```bash
+pre-commit install
+git lfs install
+```
+
+
 ## How to contribute without a deep dive into Git
 
-- The latest version of the publication is always available as a PDF under
-  [`latest-draft/uploads`](latest-draft/uploads).
 - Open a GitHub issue when you have a comment.
 - If you have a comment on a specific line, browse to the file on GitHub in your browser.
   Click on the line number and three dots will show up.
@@ -39,10 +50,3 @@ To be completed as the publication is written:
 - `YYYY-MM-DD-revised`:  Some comment
 - ...
 - [`latest-draft`](latest-draft/): The current version
-
-## Must-do after cloning this repository locally
-
-```bash
-pre-commit install
-git lfs install
-```
