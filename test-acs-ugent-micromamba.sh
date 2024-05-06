@@ -13,7 +13,7 @@ else
     ./setup-venv-micromamba.sh
 fi
 source .envrc
-pip install -U pip -e ../../bibsane -e ../../stepup/stepup-core -e ../../stepup/stepup-reprep
+pip install -U pip -e ../../bibsane -e ../../stepup-core -e ../../stepup-reprep
 cd latest-draft
 stepup -n
 cd ..
