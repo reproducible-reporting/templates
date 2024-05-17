@@ -21,3 +21,5 @@ git init
 git add .
 pre-commit install
 pre-commit run --all
+git commit -a -m "Initial commit"
+(cd archives/; ./create_archives.sh)

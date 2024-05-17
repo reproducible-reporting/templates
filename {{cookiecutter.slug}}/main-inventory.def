@@ -1,0 +1,2 @@
+include-git
+include-workflow BUILT */.stepup/workflow.mpk.gz

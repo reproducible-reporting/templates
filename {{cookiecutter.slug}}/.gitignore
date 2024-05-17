@@ -31,20 +31,14 @@
 
 */latex-*/acs-*.bib
 */latex-*/*Notes.bib
-*/latex-*/*.sha256
 
 # Software environment
 venv
 .envrc
 
-# Ninja and RepRepBuild
-.ninja_log
-.ninja_deps
-build.ninja
-*.dd
-*.d
-.reprepbuild
+# StepUp
 .stepup
+main-inventory.txt
 */latex-article/article.tex
 
 # Python
