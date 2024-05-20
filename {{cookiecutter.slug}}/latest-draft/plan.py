@@ -5,13 +5,13 @@ from stepup.reprep.api import (
     latex,
     latex_diff,
     latex_flat,
-    make_manifest,
-    zip_manifest,
+    make_inventory,
+    zip_inventory,
 )
 
 static("bibsane.yaml")
 static("dataset-example/")
-static("dataset-example/MANIFEST.in")
+static("dataset-example/inventory.def")
 static("dataset-example/example.txt")
 latex_dirs = glob("latex-${*name}/")
 static("latex-article/references.bib")
@@ -46,9 +46,10 @@ for m in latex_dirs:
     copy(path_pdf, "uploads/")
 
 for name in "article", "supp":
-    zip_manifest(f"latex-{name}/{name}.MANIFEST.txt", f"uploads/{name}.zip")
+    zip_inventory(f"latex-{name}/{name}-inventory.txt", f"uploads/{name}.zip")
 
-if glob("latex-article/old/article.tex"):
+if glob("latex-article/old/"):
+    static("latex-article/old/article.tex")
     latex_diff(
         "latex-article/old/article.tex",
         "latex-article/article.tex",
@@ -60,8 +61,9 @@ if glob("latex-article/old/article.tex"):
             "latex-article/article.bbl",
             "latex-article/article-diff.bbl",
         )
-    path_pdf = latex("article-diff.tex", workdir="latex-article")
+    path_pdf = latex("article-diff.tex", run_bibtex=False, workdir="latex-article/")
     copy(path_pdf, "uploads/")
 
-make_manifest("dataset-example/MANIFEST.in")
-zip_manifest("dataset-example/MANIFEST.txt", "uploads/dataset-example.zip")
+static("dataset-example/")
+make_inventory(glob("dataset-example/*.*"), "dataset-example-inventory.txt")
+zip_inventory("dataset-example-inventory.txt", "uploads/dataset-example.zip")

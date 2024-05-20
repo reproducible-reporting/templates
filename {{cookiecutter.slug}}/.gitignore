@@ -38,13 +38,14 @@ venv
 
 # StepUp
 .stepup
-main-inventory.txt
+*-inventory.txt
+*/uploads/*.zip
+*/uploads/*.pdf
+archives/*.bundle
+archives/*.zip
 */latex-article/article.tex
 
 # Python
 __pycache__
 dist
 build
-
-# Scripts
-*/results-*/*.log

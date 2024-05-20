@@ -22,23 +22,14 @@ repos:
       args: ["--autofix", "--no-sort-keys"]
     - id: trailing-whitespace
       exclude: \.aux$
-# Not compatible with Python 3.12
-# See https://github.com/lovesegfault/beautysh/issues/248
-# - repo: https://github.com/lovesegfault/beautysh
-#  rev: v6.2.1
-#  hooks:
-#    - id: beautysh
 - repo: https://github.com/Lucas-C/pre-commit-hooks
   rev: v1.5.5
   hooks:
     - id: remove-crlf
       exclude_types: [binary]
-- repo: https://github.com/psf/black
-  rev: 24.4.1
-  hooks:
-    - id: black
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: 'v0.4.1'
+  rev: v0.4.4
   hooks:
+    - id: ruff-format
     - id: ruff
-      args: ["--fix"]
+      args: ["--fix", "--show-fixes"]

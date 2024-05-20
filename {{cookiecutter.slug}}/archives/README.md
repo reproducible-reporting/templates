@@ -11,12 +11,12 @@ Feel free to remove the following instructions after completing them:
 > - Choose suitable filenames for the archives.
 > - Add a brief description for each archive.
 > - Explain how to unpack each archive.
-> - Estimate how long the archives should be preserved.
 > - Describe where the data will be archived
+> - Estimate and mention how long the archives should be preserved.
 >
 > After finalizing these preparations, do the following:
 >
-> - Copy or upload archives and this README to their final destination.
+> - Copy or upload archives and this README to their final storage destination.
 > - Store this README in a searchable metadata repository.
 
 The archives below were created by running [`create_archives.sh`](create_archives.sh) in this `archives` directory:

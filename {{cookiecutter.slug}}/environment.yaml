@@ -8,3 +8,5 @@ dependencies:
 - tqdm
 - pip:
   - bibsane
+  - stepup
+  - stepup-reprep

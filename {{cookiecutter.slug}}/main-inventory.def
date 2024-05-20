@@ -1,2 +1,2 @@
 include-git
-include-workflow BUILT */.stepup/workflow.mpk.gz
+include-workflow BUILT */.stepup/workflow.mpk.xz
