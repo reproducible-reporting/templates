@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Example plotting script."""
 
-import matplotlib
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 from stepup.core.script import driver
@@ -27,7 +27,7 @@ def info():
 
 
 def run(inp, out):
-    matplotlib.rc_file(inp.pop(0))
+    mpl.rc_file(inp.pop(0))
     fig, ax = plt.subplots()
     for fn_in in inp:
         data = np.loadtxt(fn_in)

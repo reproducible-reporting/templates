@@ -10,9 +10,6 @@ from stepup.reprep.api import (
 )
 
 static("bibsane.yaml")
-static("dataset-example/")
-static("dataset-example/inventory.def")
-static("dataset-example/example.txt")
 latex_dirs = glob("latex-${*name}/")
 static("latex-article/references.bib")
 static("latex-cover/cover.tex")
