@@ -1,3 +1,7 @@
+[tool.pip-tools]
+generate_hashes = true
+strip_extras = true
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"

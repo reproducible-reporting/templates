@@ -1,12 +1,10 @@
 dependencies:
-- python
-- watchdog
-- numpy
-- matplotlib
 - pre-commit
-- pytest
-- tqdm
+- python==3.11
+- numpy==1.26
+- matplotlib=3.9
+- pytest==8.2.1
 - pip:
-  - bibsane
-  - stepup
-  - stepup-reprep
+  - bibsane==0.1.3
+  - stepup==1.2.4
+  - stepup-reprep==1.2.1

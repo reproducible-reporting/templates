@@ -16,9 +16,10 @@ source ${PWD}/venv/bin/activate
 unset PS1
 EOL
 
-# Activate
+# Activate and update installer tools
 source .envrc
-python3 -m pip install -U pip
+pip install -U pip pip-tools
 
-# Install requirements, possibly updated after repository initialization
-python3 -m pip install -r requirements.txt
+# Install requirements
+pip-compile requirements.in
+pip-sync

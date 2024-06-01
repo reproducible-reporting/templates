@@ -1,8 +1,0 @@
-# Minimal requirements for RepRepBuild and the initial template
-pre-commit
-numpy
-matplotlib
-pytest
-bibsane
-stepup
-stepup-reprep

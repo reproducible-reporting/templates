@@ -1,0 +1,8 @@
+# Minimal requirements for RepRepBuild and the initial template
+pre-commit
+numpy==1.26
+matplotlib==3.9
+pytest==8.2.1
+bibsane==0.1.3
+stepup==1.2.4
+stepup-reprep==1.2.1
