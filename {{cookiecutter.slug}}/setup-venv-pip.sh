@@ -2,7 +2,7 @@
 set -e
 
 # This script assumes you have a running and somewhat modern Python environment.
-: "${PYTHON3:=/usr/bin/python3}"
+: "${PYTHON3:=$(which python3)}"
 ${PYTHON3} -c 'import sys; assert sys.version_info.major == 3; assert sys.version_info.minor >= 11'
 
 echo "Create the venv"
