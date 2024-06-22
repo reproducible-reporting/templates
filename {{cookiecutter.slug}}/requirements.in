@@ -1,8 +1,10 @@
-# Minimal requirements for RepRepBuild and the initial template
-pre-commit
-numpy==1.26
-matplotlib==3.9
-pytest==8.2.1
+# Pip version pinned due to https://github.com/mbarkhau/markdown-katex/pull/17
+pip<=24.0
+# Minimal requirements for StepUp RepRep and the initial template
+pre-commit==3.7.1
+numpy==2.0.0
+matplotlib==3.9.0
+pytest==8.2.2
 bibsane==0.1.3
-stepup==1.2.4
+stepup==1.2.6
 stepup-reprep==1.2.1
