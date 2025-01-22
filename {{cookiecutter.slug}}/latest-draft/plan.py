@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from stepup.core.api import copy, glob, script, static
 from stepup.reprep.api import (
     convert_svg_pdf,
@@ -21,7 +21,7 @@ zip_inventory("dataset-example-inventory.txt", "uploads/dataset-example.zip")
 glob("results-*/")
 static("matplotlibrc")
 for m in glob("results-${*name}/${*script}.py"):
-    script(f"{m.script}.py", f"results-{m.name}/")
+    script(f"{m.script}.py", workdir=f"results-{m.name}/")
 
 # Declare static directories and files for LaTeX documents
 static("bibsane.yaml")
@@ -48,13 +48,14 @@ else:
 # Compile LaTeX documents
 for m in latex_dirs:
     latexbin = "xelatex" if m.name == "presentation" else "pdflatex"
-    path_pdf = latex(
+    info = latex(
         f"{m.name}.tex",
         latex=latexbin,
         workdir=f"latex-{m.name}/",
         bibsane_config="../bibsane.yaml",
     )
-    copy(path_pdf, "uploads/")
+    path_pdf = info.filter_out("*.pdf").single()
+    copy(info.workdir / path_pdf, "uploads/")
 
 # Create ZIP files with LaTeX sources
 for name in "article", "supp":
@@ -74,5 +75,6 @@ if glob("latex-article/old/"):
             "latex-article/article.bbl",
             "latex-article/article-diff.bbl",
         )
-    path_pdf = latex("article-diff.tex", run_bibtex=False, workdir="latex-article/")
-    copy(path_pdf, "uploads/")
+    info = latex("article-diff.tex", run_bibtex=False, workdir="latex-article/")
+    path_pdf = info.filter_out("*.pdf").single()
+    copy(info.workdir / path_pdf, "uploads/")

@@ -21,7 +21,7 @@ EOL
 
 # Activate and update installer tools
 source .envrc
-pip install -U 'pip<=24.0' pip-tools
+pip install -U pip pip-tools
 
 # Install requirements
 pip-compile requirements.in

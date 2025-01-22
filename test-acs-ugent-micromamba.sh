@@ -15,9 +15,11 @@ fi
 source .envrc
 pip install -U pip -e ../../bibsane -e ../../stepup-core -e ../../stepup-reprep
 cd latest-draft
-stepup -n
+stepup
 cd ..
 git init
 git add .
 pre-commit install
 pre-commit run --all
+git commit -a -m "Initial commit"
+(cd archives/; ./create_archives.sh)

@@ -15,7 +15,7 @@ fi
 source .envrc
 pip install -U pip -e ../../bibsane -e ../../stepup-core -e ../../stepup-reprep
 cd latest-draft
-stepup -n
+stepup
 cd ..
 git init
 git add .
