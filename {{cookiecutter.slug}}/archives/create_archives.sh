@@ -13,9 +13,9 @@ for d in */; do (cd $d && if [[ -f plan.py ]]; then stepup; fi); done
 git bundle create archives/main.bundle main
 
 # Create an inventory and a reproducible zip file with outputs
-reprep-make-inventory -i main-inventory.def -o main-inventory.txt
-reprep-zip-inventory main-inventory.txt archives/main-latest-with-outputs.zip
+rr-make-inventory -i main-inventory.def -o main-inventory.txt
+rr-zip-inventory main-inventory.txt archives/main-latest-with-outputs.zip
 
 # Make a final inventory file of the archived data
 cd archives
-reprep-make-inventory -o main-archive-inventory.txt README.md main.bundle main-latest-with-outputs.zip
+rr-make-inventory -o main-archive-inventory.txt README.md main.bundle main-latest-with-outputs.zip
