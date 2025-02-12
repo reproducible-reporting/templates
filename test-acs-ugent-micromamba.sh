@@ -13,9 +13,8 @@ else
     ./setup-venv-micromamba.sh
 fi
 source .envrc
-pip install -U pip -e ../../bibsane -e ../../stepup-core -e ../../stepup-reprep
 cd latest-draft
-stepup
+STEPUP_DEBUG=1 STEPUP_SYNC_RPC_TIMEOUT=10 stepup
 cd ..
 git init
 git add .
