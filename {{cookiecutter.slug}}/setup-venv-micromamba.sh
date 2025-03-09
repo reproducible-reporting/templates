@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 # This script is more general than the pip version, but also a bit more heavy-handed.
 # Use this in case of (i) non-python dependencies (ii) a system without Python (yet).
@@ -33,27 +33,26 @@ mkdir -p venv/bin
 curl -Ls https://micro.mamba.pm/api/micromamba/$PLATFORM-$ARCH/latest | tar -xj -C venv/bin/ --strip-components=1 bin/micromamba
 
 # Write scripts to activate and deactivate properly
-cat > venv/bin/activate << 'EOL'
+cat > venv/bin/activate << 'EOF'
 export MAMBA_ROOT_PREFIX=$(dirname $(dirname $BASH_SOURCE))
 eval "$(${MAMBA_ROOT_PREFIX}/bin/micromamba shell hook -s posix)"
 micromamba activate
 hash -r
-EOL
+EOF
 
 # Write a condarc file in the venv
-cat > venv/.condarc << 'EOL'
+cat > venv/.condarc << 'EOF'
 channels:
 - conda-forge
-EOL
+EOF
 
 # Create an .envrc for direnv.
-cat > .envrc << 'EOL'
+cat > .envrc << 'EOF'
 export SOURCE_DATE_EPOCH=315532800
 export TEXMFHOME="${PWD}/texmf"
 source ${PWD}/venv/bin/activate
 unset PS1
-EOL
-
+EOF
 
 # Activate and install
 source .envrc

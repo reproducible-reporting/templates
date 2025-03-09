@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 # If you want to install with a Python version that is not your OS's default:
@@ -12,20 +12,21 @@ echo "Create the venv"
 ${PYTHON3} -m venv venv
 
 # Create an .envrc for direnv.
-cat > .envrc << 'EOL'
+cat > .envrc << 'EOF'
 export SOURCE_DATE_EPOCH=315532800
 export TEXMFHOME="${PWD}/texmf"
 source ${PWD}/venv/bin/activate
 unset PS1
-EOL
+EOF
 
 # Activate and update installer tools
-source .envrc
-pip install -U pip pip-tools
+direnv allow
+eval "$(direnv export bash)"
+python3 -m pip install -U pip pip-tools
 
 # Install requirements
-pip-compile requirements.in
-pip-sync
+python3 -m piptools compile -q
+python3 -m piptools sync
 
 if [[ -n "${TEMPLATE_DEBUG}" ]]; then
     # Install local development versions of StepUp Core and StepUp RePrep
