@@ -15,7 +15,7 @@ static("uploads/")
 
 # Zip dataset
 static("dataset-example/")
-make_inventory(glob("dataset-example/*.*"), "dataset-example-inventory.txt")
+make_inventory(*glob("dataset-example/*.*"), "dataset-example-inventory.txt")
 zip_inventory("dataset-example-inventory.txt", "uploads/dataset-example.zip")
 
 # Python scripts in results-*/

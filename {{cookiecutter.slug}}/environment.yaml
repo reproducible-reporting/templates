@@ -7,6 +7,5 @@ dependencies:
 - matplotlib=3.8.4
 - pytest==8.2.2
 - pip:
-  - bibsane==0.1.3
-  - stepup==1.2.6
-  - stepup-reprep==1.2.1
+  - stepup==2.1.6
+  - stepup-reprep==2.3.5

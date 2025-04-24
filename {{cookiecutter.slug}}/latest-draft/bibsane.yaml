@@ -47,20 +47,23 @@ citation_policies:
     month: may
     year: must
     pages: must
-  misc.arxiv:
+  inproceedings:
     author: must
+    address: must  # Conference address, Month, Day
+    booktitle: must  # Proc. ...
+    note: must  # DOI: \doi{...}
+    pages: must  # 1--10
     title: must
     year: must
-    eprint: must
-    archiveprefix: must
-  misc.url:
+  misc.preprint:
+    author: must
+    howpublished: must  # arXiv
+    note: must  # DOI: \doi{...}
     title: must
-    url: must
-    urldate: must
+    year: must
   misc.dataset:
     author: must
+    howpublished: must  # Zenodo
+    note: must  # DOI: \doi{...}
     title: must
     year: must
-    doi: must
-    urldate: must
-    publisher: must
