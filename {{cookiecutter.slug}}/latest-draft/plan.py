@@ -27,7 +27,6 @@ for m in glob("results-${*name}/${*script}.py"):
 # Declare static directories and files for LaTeX documents
 static("bibsane.yaml")
 latex_dirs = glob("latex-${*name}/")
-static("latex-article/references.bib")
 static("latex-cover/cover.tex")
 static("latex-reply/reply.tex")
 static("latex-presentation/presentation.tex")
@@ -55,8 +54,13 @@ for m in latex_dirs:
         workdir=f"latex-{m.name}/",
         inventory=(m.name in ["article", "supp"]),
     )
-    if len(info.filter_inp("*.bib").files()) > 1:
-        sanitize_bibtex(f"latex-{m.name}/{m.name}.aux", path_cfg="bibsane.yaml")
+    path_bib = f"latex-{m.name}/references.bib"
+    if glob(path_bib):
+        sanitize_bibtex(
+            path_bib,
+            path_aux=f"latex-{m.name}/{m.name}.aux",
+            path_cfg="bibsane.yaml",
+        )
     path_pdf = info.filter_out("*.pdf").single()
     copy(info.workdir / path_pdf, "uploads/")
 

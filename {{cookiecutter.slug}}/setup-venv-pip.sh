@@ -29,7 +29,6 @@ python3 -m piptools compile -q
 python3 -m piptools sync
 
 if [[ -n "${TEMPLATE_DEBUG}" ]]; then
-    # Install local development versions of StepUp Core and StepUp RePrep
-    echo "Install the development version of the DMP template"
+    echo "Install the development versions of StepUp Core and StepUp RePrep"
     python -m pip install -e ${TEMPLATE_DEBUG}/stepup-core -e ${TEMPLATE_DEBUG}/stepup-reprep
 fi
