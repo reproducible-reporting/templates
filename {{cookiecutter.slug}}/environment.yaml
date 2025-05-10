@@ -1,6 +1,6 @@
 dependencies:
 # Pip version pinned due to https://github.com/mbarkhau/markdown-katex/pull/17
-- pip<=24.0
+- pip<=25.1
 - pre-commit==3.7.1
 - python==3.11
 - numpy==2.0.0

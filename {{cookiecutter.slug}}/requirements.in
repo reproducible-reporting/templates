@@ -5,6 +5,5 @@ pre-commit==4.1.0
 numpy==2.2.2
 matplotlib==3.10.0
 pytest==8.3.4
-bibsane==0.1.3
-stepup==2.1.6
-stepup-reprep==2.3.5
+stepup==2.1.7
+stepup-reprep==2.3.6

@@ -22,7 +22,8 @@ EOF
 # Activate and update installer tools
 direnv allow
 eval "$(direnv export bash)"
-python3 -m pip install -U pip pip-tools
+# Workaround for https://github.com/jazzband/pip-tools/issues/2176
+python3 -m pip install -U 'pip<25.1' pip-tools
 
 # Install requirements
 python3 -m piptools compile -q
