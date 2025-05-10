@@ -14,7 +14,7 @@ else
 fi
 source .envrc
 cd latest-draft
-STEPUP_DEBUG=1 STEPUP_SYNC_RPC_TIMEOUT=10 stepup
+STEPUP_DEBUG=1 STEPUP_SYNC_RPC_TIMEOUT=10 stepup boot
 cd ..
 git init
 git add .

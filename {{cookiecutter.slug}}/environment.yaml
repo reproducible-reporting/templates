@@ -7,5 +7,5 @@ dependencies:
 - matplotlib=3.8.4
 - pytest==8.2.2
 - pip:
-  - stepup==2.1.6
-  - stepup-reprep==2.3.5
+  - stepup==3.0.0
+  - stepup-reprep==3.0.0
