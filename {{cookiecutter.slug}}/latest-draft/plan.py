@@ -7,6 +7,7 @@ from stepup.reprep.api import (
     flatten_latex,
     make_inventory,
     sanitize_bibtex,
+    wrap_git,
     zip_inventory,
 )
 
@@ -32,6 +33,10 @@ static("latex-reply/reply.tex")
 static("latex-presentation/presentation.tex")
 static("latex-presentation/pexels-mathias-reding-5838235.jpg")
 static("latex-supp/supp.tex")
+
+# Write some information of the Git commit to in include file:
+glob("../.git/**", _defer=True)
+wrap_git("git log -n 1 --pretty='format:%cs (%h)' --date=short", out="git-info.txt")
 
 # Convert SVG to PDF figures
 for path_svg in glob("*/*.svg"):

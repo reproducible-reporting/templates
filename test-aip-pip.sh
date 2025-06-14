@@ -13,12 +13,10 @@ else
     ./setup-venv-pip.sh
 fi
 source .envrc
-cd latest-draft
-STEPUP_DEBUG=1 STEPUP_SYNC_RPC_TIMEOUT=10 stepup boot
-cd ..
-git init
+git init --initial-branch main
 git add .
 pre-commit install
 pre-commit run --all
 git commit -a -m "Initial commit"
+(cd latest-draft; STEPUP_DEBUG=1 STEPUP_SYNC_RPC_TIMEOUT=10 stepup boot)
 (cd archives/; ./create_archives.sh)

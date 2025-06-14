@@ -44,6 +44,7 @@ venv
 archives/*.bundle
 archives/*.zip
 */latex-article/article.tex
+*/git-info.txt
 
 # Python
 __pycache__
