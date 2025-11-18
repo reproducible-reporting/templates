@@ -30,8 +30,6 @@ static("bibsane.yaml")
 latex_dirs = glob("latex-${*name}/")
 static("latex-cover/cover.tex")
 static("latex-reply/reply.tex")
-static("latex-presentation/presentation.tex")
-static("latex-presentation/pexels-mathias-reding-5838235.jpg")
 static("latex-supp/supp.tex")
 
 # Write some information of the Git commit to in include file:
@@ -52,10 +50,9 @@ else:
 
 # Compile LaTeX documents
 for m in latex_dirs:
-    latexbin = "xelatex" if m.name == "presentation" else "pdflatex"
     info = compile_latex(
         f"{m.name}.tex",
-        latex=latexbin,
+        latex="pdflatex",
         workdir=f"latex-{m.name}/",
         inventory=(m.name in ["article", "supp"]),
     )
