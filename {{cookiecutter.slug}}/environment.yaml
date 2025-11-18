@@ -1,11 +1,9 @@
 dependencies:
-# Pip version pinned due to https://github.com/mbarkhau/markdown-katex/pull/17
-- pip<=25.1
-- pre-commit==3.7.1
-- python==3.11
-- numpy==2.0.0
-- matplotlib=3.8.4
-- pytest==8.2.2
+- pre-commit==4.4.0
+- python==3.13
+- numpy==2.3.5
+- matplotlib==3.10.7
+- pytest==9.0.1
 - pip:
-  - stepup==3.0.0
-  - stepup-reprep==3.0.0
+  - stepup==3.1.2
+  - stepup-reprep==3.1.5
