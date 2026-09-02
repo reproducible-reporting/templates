@@ -35,6 +35,8 @@
 # Software environment
 venv
 .envrc
+.venv
+uv.lock
 
 # StepUp
 .stepup

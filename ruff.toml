@@ -1,8 +1,7 @@
-[tool.ruff]
 line-length = 100
 target-version = "py311"
 
-[tool.ruff.lint]
+[lint]
 select = [
     "A", "B", "BLE", "C4", "E", "EXE", "F", "I", "ICN", "ISC", "N", "NPY", "PERF", "PIE", "PL",
     "PT", "PYI", "RET", "RSE", "RUF", "SIM", "TRY", "UP", "W"

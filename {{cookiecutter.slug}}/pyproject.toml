@@ -1,6 +1,23 @@
-[tool.pip-tools]
-generate_hashes = true
-strip_extras = true
+[project]
+name = "stepup-project"
+version = "0.1.0"
+description = "Your StepUp project."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # Minimal requirements for StepUp RepRep and the initial template
+    "pre-commit==4.6.2",
+    "numpy==2.5.2",
+    "matplotlib==3.11.1",
+    "pytest==9.1.1",
+    "stepup==4.0.0",
+    "stepup-reprep==4.0.0"
+]
+
+[tool.uv]
+package = false
+cache-dir = "./.venv/cache"
+python-downloads = "auto"
 
 [tool.ruff]
 line-length = 100

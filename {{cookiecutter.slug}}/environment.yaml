@@ -1,9 +1,9 @@
 dependencies:
-- pre-commit==4.4.0
+- pre-commit==4.6.2
 - python==3.13
-- numpy==2.3.5
-- matplotlib==3.10.7
-- pytest==9.0.1
+- numpy==2.5.2
+- matplotlib==3.11.1
+- pytest==9.1.1
 - pip:
-  - stepup==3.1.2
-  - stepup-reprep==3.1.5
+  - stepup==4.0.0
+  - stepup-reprep==4.0.0

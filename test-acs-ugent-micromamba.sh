@@ -18,5 +18,5 @@ git add .
 pre-commit install
 pre-commit run --all
 git commit -a -m "Initial commit"
-(cd latest-draft; STEPUP_DEBUG=1 STEPUP_SYNC_RPC_TIMEOUT=10 stepup boot)
+(cd latest-draft; STEPUP_DEBUG=1 STEPUP_SYNC_RPC_TIMEOUT=10 sb)
 (cd archives/; ./create_archives.sh)

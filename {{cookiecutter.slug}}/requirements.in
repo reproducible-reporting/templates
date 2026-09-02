@@ -1,8 +1,0 @@
-# Minimal requirements for StepUp RepRep and the initial template
-pre-commit==4.4.0
-python==3.13
-numpy==2.3.5
-matplotlib==3.10.7
-pytest==9.0.1
-stepup==3.1.2
-stepup-reprep==3.1.5
